@@ -976,7 +976,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def create_third_party_resource(self, body, **kwargs):
+    def create_third_party_resource(self, body, namespace, **kwargs):
         """
         create a ThirdPartyResource
         
@@ -1042,9 +1042,14 @@ class ApisextensionsvbetaApi(object):
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_third_party_resource`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `create_third_party_resource`")
 
-        resource_path = '/apis/extensions/v1beta1/thirdpartyresources'.replace('{format}', 'json')
+        resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/thirdpartyresources'.replace('{format}', 'json')
         path_params = {}
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
         if 'pretty' in params:
