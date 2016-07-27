@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**create_namespaced_network_policy**](ApisextensionsvbetaApi.md#create_namespaced_network_policy) | **POST** /apis/extensions/v1beta1/namespaces/{namespace}/networkpolicies | create a NetworkPolicy
 [**create_namespaced_replica_set**](ApisextensionsvbetaApi.md#create_namespaced_replica_set) | **POST** /apis/extensions/v1beta1/namespaces/{namespace}/replicasets | create a ReplicaSet
 [**create_third_party_resource**](ApisextensionsvbetaApi.md#create_third_party_resource) | **POST** /apis/extensions/v1beta1/thirdpartyresources | create a ThirdPartyResource
+[**create_third_party_resource_0**](ApisextensionsvbetaApi.md#create_third_party_resource_0) | **POST** /apis/extensions/v1beta1/thirdpartyresources/{name} | create a ThirdPartyResource
 [**delete_namespaced_daemon_set**](ApisextensionsvbetaApi.md#delete_namespaced_daemon_set) | **DELETE** /apis/extensions/v1beta1/namespaces/{namespace}/daemonsets/{name} | delete a DaemonSet
 [**delete_namespaced_deployment**](ApisextensionsvbetaApi.md#delete_namespaced_deployment) | **DELETE** /apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name} | delete a Deployment
 [**delete_namespaced_horizontal_pod_autoscaler**](ApisextensionsvbetaApi.md#delete_namespaced_horizontal_pod_autoscaler) | **DELETE** /apis/extensions/v1beta1/namespaces/{namespace}/horizontalpodautoscalers/{name} | delete a HorizontalPodAutoscaler
@@ -545,6 +546,55 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**V1beta1ThirdPartyResource**](V1beta1ThirdPartyResource.md)|  | 
+ **pretty** | **str**| If &#39;true&#39;, then the output is pretty printed. | [optional] 
+
+### Return type
+
+[**V1beta1ThirdPartyResource**](V1beta1ThirdPartyResource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json, application/yaml, application/vnd.kubernetes.protobuf
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_third_party_resource_0**
+> V1beta1ThirdPartyResource create_third_party_resource_0(body, name, pretty=pretty)
+
+create a ThirdPartyResource
+
+### Example 
+```python
+import time
+import k8sv1beta1
+from k8sv1beta1.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = k8sv1beta1.ApisextensionsvbetaApi()
+body = k8sv1beta1.V1beta1ThirdPartyResource() # V1beta1ThirdPartyResource | 
+name = 'name_example' # str | name of the ThirdPartyResource
+pretty = 'pretty_example' # str | If 'true', then the output is pretty printed. (optional)
+
+try: 
+    # create a ThirdPartyResource
+    api_response = api_instance.create_third_party_resource_0(body, name, pretty=pretty)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ApisextensionsvbetaApi->create_third_party_resource_0: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**V1beta1ThirdPartyResource**](V1beta1ThirdPartyResource.md)|  | 
+ **name** | **str**| name of the ThirdPartyResource | 
  **pretty** | **str**| If &#39;true&#39;, then the output is pretty printed. | [optional] 
 
 ### Return type
