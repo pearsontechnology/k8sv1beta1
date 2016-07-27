@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **serviceName** | **str** | Specifies the name of the referenced service. | 
-**servicePort** | **str** | Specifies the port of the referenced service. | 
+**servicePort** | **int** | Specifies the port of the referenced service. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
