@@ -977,6 +977,121 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
+    def create_namespaced_third_party_resource(self, body, namespace, **kwargs):
+        """
+        create a ThirdPartyResource
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.create_namespaced_third_party_resource(body, namespace, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1beta1ThirdPartyResource body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1beta1ThirdPartyResource
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.create_namespaced_third_party_resource_with_http_info(body, namespace, **kwargs)
+        else:
+            (data) = self.create_namespaced_third_party_resource_with_http_info(body, namespace, **kwargs)
+            return data
+
+    def create_namespaced_third_party_resource_with_http_info(self, body, namespace, **kwargs):
+        """
+        create a ThirdPartyResource
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.create_namespaced_third_party_resource_with_http_info(body, namespace, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V1beta1ThirdPartyResource body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :return: V1beta1ThirdPartyResource
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'namespace', 'pretty']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_namespaced_third_party_resource" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_namespaced_third_party_resource`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `create_namespaced_third_party_resource`")
+
+        resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/thirdpartyresources'.replace('{format}', 'json')
+        path_params = {}
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1beta1ThirdPartyResource',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'),
+                                            _return_http_data_only=params.get('_return_http_data_only'))
+
     def create_third_party_resource(self, body, **kwargs):
         """
         create a ThirdPartyResource
@@ -3065,6 +3180,134 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
+    def deletecollection_namespaced_third_party_resource(self, namespace, **kwargs):
+        """
+        delete collection of ThirdPartyResource
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.deletecollection_namespaced_third_party_resource(namespace, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
+        :return: UnversionedStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.deletecollection_namespaced_third_party_resource_with_http_info(namespace, **kwargs)
+        else:
+            (data) = self.deletecollection_namespaced_third_party_resource_with_http_info(namespace, **kwargs)
+            return data
+
+    def deletecollection_namespaced_third_party_resource_with_http_info(self, namespace, **kwargs):
+        """
+        delete collection of ThirdPartyResource
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.deletecollection_namespaced_third_party_resource_with_http_info(namespace, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
+        :return: UnversionedStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method deletecollection_namespaced_third_party_resource" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `deletecollection_namespaced_third_party_resource`")
+
+        resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/thirdpartyresources'.replace('{format}', 'json')
+        path_params = {}
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnversionedStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'),
+                                            _return_http_data_only=params.get('_return_http_data_only'))
+
     def deletecollection_third_party_resource(self, **kwargs):
         """
         delete collection of ThirdPartyResource
@@ -5022,6 +5265,134 @@ class ApisextensionsvbetaApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='V1beta1ReplicaSetList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'),
+                                            _return_http_data_only=params.get('_return_http_data_only'))
+
+    def list_namespaced_third_party_resources(self, namespace, **kwargs):
+        """
+        list or watch objects of kind ThirdPartyResources
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_namespaced_third_party_resources(namespace, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
+        :return: V1beta1ThirdPartyResource
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.list_namespaced_third_party_resources_with_http_info(namespace, **kwargs)
+        else:
+            (data) = self.list_namespaced_third_party_resources_with_http_info(namespace, **kwargs)
+            return data
+
+    def list_namespaced_third_party_resources_with_http_info(self, namespace, **kwargs):
+        """
+        list or watch objects of kind ThirdPartyResources
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_namespaced_third_party_resources_with_http_info(namespace, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
+        :return: V1beta1ThirdPartyResource
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_namespaced_third_party_resources" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_third_party_resources`")
+
+        resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/thirdpartyresources'.replace('{format}', 'json')
+        path_params = {}
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+
+        query_params = {}
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json', 'application/yaml', 'application/vnd.kubernetes.protobuf'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['*/*'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V1beta1ThirdPartyResource',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))

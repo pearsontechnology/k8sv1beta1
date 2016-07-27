@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**create_namespaced_job**](ApisextensionsvbetaApi.md#create_namespaced_job) | **POST** /apis/extensions/v1beta1/namespaces/{namespace}/jobs | create a Job
 [**create_namespaced_network_policy**](ApisextensionsvbetaApi.md#create_namespaced_network_policy) | **POST** /apis/extensions/v1beta1/namespaces/{namespace}/networkpolicies | create a NetworkPolicy
 [**create_namespaced_replica_set**](ApisextensionsvbetaApi.md#create_namespaced_replica_set) | **POST** /apis/extensions/v1beta1/namespaces/{namespace}/replicasets | create a ReplicaSet
+[**create_namespaced_third_party_resource**](ApisextensionsvbetaApi.md#create_namespaced_third_party_resource) | **POST** /apis/extensions/v1beta1/namespaces/{namespace}/thirdpartyresources | create a ThirdPartyResource
 [**create_third_party_resource**](ApisextensionsvbetaApi.md#create_third_party_resource) | **POST** /apis/extensions/v1beta1/thirdpartyresources | create a ThirdPartyResource
 [**create_third_party_resource_0**](ApisextensionsvbetaApi.md#create_third_party_resource_0) | **POST** /apis/extensions/v1beta1/thirdpartyresources/{name} | create a ThirdPartyResource
 [**delete_namespaced_daemon_set**](ApisextensionsvbetaApi.md#delete_namespaced_daemon_set) | **DELETE** /apis/extensions/v1beta1/namespaces/{namespace}/daemonsets/{name} | delete a DaemonSet
@@ -29,6 +30,7 @@ Method | HTTP request | Description
 [**deletecollection_namespaced_job**](ApisextensionsvbetaApi.md#deletecollection_namespaced_job) | **DELETE** /apis/extensions/v1beta1/namespaces/{namespace}/jobs | delete collection of Job
 [**deletecollection_namespaced_network_policy**](ApisextensionsvbetaApi.md#deletecollection_namespaced_network_policy) | **DELETE** /apis/extensions/v1beta1/namespaces/{namespace}/networkpolicies | delete collection of NetworkPolicy
 [**deletecollection_namespaced_replica_set**](ApisextensionsvbetaApi.md#deletecollection_namespaced_replica_set) | **DELETE** /apis/extensions/v1beta1/namespaces/{namespace}/replicasets | delete collection of ReplicaSet
+[**deletecollection_namespaced_third_party_resource**](ApisextensionsvbetaApi.md#deletecollection_namespaced_third_party_resource) | **DELETE** /apis/extensions/v1beta1/namespaces/{namespace}/thirdpartyresources | delete collection of ThirdPartyResource
 [**deletecollection_third_party_resource**](ApisextensionsvbetaApi.md#deletecollection_third_party_resource) | **DELETE** /apis/extensions/v1beta1/thirdpartyresources | delete collection of ThirdPartyResource
 [**get_api_resources**](ApisextensionsvbetaApi.md#get_api_resources) | **GET** /apis/extensions/v1beta1 | get available resources
 [**list_namespaced_daemon_set**](ApisextensionsvbetaApi.md#list_namespaced_daemon_set) | **GET** /apis/extensions/v1beta1/daemonsets | list or watch objects of kind DaemonSet
@@ -45,6 +47,7 @@ Method | HTTP request | Description
 [**list_namespaced_network_policy_0**](ApisextensionsvbetaApi.md#list_namespaced_network_policy_0) | **GET** /apis/extensions/v1beta1/networkpolicies | list or watch objects of kind NetworkPolicy
 [**list_namespaced_replica_set**](ApisextensionsvbetaApi.md#list_namespaced_replica_set) | **GET** /apis/extensions/v1beta1/namespaces/{namespace}/replicasets | list or watch objects of kind ReplicaSet
 [**list_namespaced_replica_set_0**](ApisextensionsvbetaApi.md#list_namespaced_replica_set_0) | **GET** /apis/extensions/v1beta1/replicasets | list or watch objects of kind ReplicaSet
+[**list_namespaced_third_party_resources**](ApisextensionsvbetaApi.md#list_namespaced_third_party_resources) | **GET** /apis/extensions/v1beta1/namespaces/{namespace}/thirdpartyresources | list or watch objects of kind ThirdPartyResources
 [**list_third_party_resource**](ApisextensionsvbetaApi.md#list_third_party_resource) | **GET** /apis/extensions/v1beta1/thirdpartyresources | list or watch objects of kind ThirdPartyResource
 [**patch_namespaced_daemon_set**](ApisextensionsvbetaApi.md#patch_namespaced_daemon_set) | **PATCH** /apis/extensions/v1beta1/namespaces/{namespace}/daemonsets/{name} | partially update the specified DaemonSet
 [**patch_namespaced_daemon_set_status**](ApisextensionsvbetaApi.md#patch_namespaced_daemon_set_status) | **PATCH** /apis/extensions/v1beta1/namespaces/{namespace}/daemonsets/{name}/status | partially update status of the specified DaemonSet
@@ -504,6 +507,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**V1beta1ReplicaSet**](V1beta1ReplicaSet.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json, application/yaml, application/vnd.kubernetes.protobuf
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_namespaced_third_party_resource**
+> V1beta1ThirdPartyResource create_namespaced_third_party_resource(body, namespace, pretty=pretty)
+
+create a ThirdPartyResource
+
+### Example 
+```python
+import time
+import k8sv1beta1
+from k8sv1beta1.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = k8sv1beta1.ApisextensionsvbetaApi()
+body = k8sv1beta1.V1beta1ThirdPartyResource() # V1beta1ThirdPartyResource | 
+namespace = 'namespace_example' # str | object name and auth scope, such as for teams and projects
+pretty = 'pretty_example' # str | If 'true', then the output is pretty printed. (optional)
+
+try: 
+    # create a ThirdPartyResource
+    api_response = api_instance.create_namespaced_third_party_resource(body, namespace, pretty=pretty)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ApisextensionsvbetaApi->create_namespaced_third_party_resource: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**V1beta1ThirdPartyResource**](V1beta1ThirdPartyResource.md)|  | 
+ **namespace** | **str**| object name and auth scope, such as for teams and projects | 
+ **pretty** | **str**| If &#39;true&#39;, then the output is pretty printed. | [optional] 
+
+### Return type
+
+[**V1beta1ThirdPartyResource**](V1beta1ThirdPartyResource.md)
 
 ### Authorization
 
@@ -1417,6 +1469,63 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **deletecollection_namespaced_third_party_resource**
+> UnversionedStatus deletecollection_namespaced_third_party_resource(namespace, pretty=pretty, labelSelector=labelSelector, fieldSelector=fieldSelector, watch=watch, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds)
+
+delete collection of ThirdPartyResource
+
+### Example 
+```python
+import time
+import k8sv1beta1
+from k8sv1beta1.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = k8sv1beta1.ApisextensionsvbetaApi()
+namespace = 'namespace_example' # str | object name and auth scope, such as for teams and projects
+pretty = 'pretty_example' # str | If 'true', then the output is pretty printed. (optional)
+labelSelector = 'labelSelector_example' # str | A selector to restrict the list of returned objects by their labels. Defaults to everything. (optional)
+fieldSelector = 'fieldSelector_example' # str | A selector to restrict the list of returned objects by their fields. Defaults to everything. (optional)
+watch = true # bool | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
+resourceVersion = 'resourceVersion_example' # str | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. (optional)
+timeoutSeconds = 56 # int | Timeout for the list/watch call. (optional)
+
+try: 
+    # delete collection of ThirdPartyResource
+    api_response = api_instance.deletecollection_namespaced_third_party_resource(namespace, pretty=pretty, labelSelector=labelSelector, fieldSelector=fieldSelector, watch=watch, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ApisextensionsvbetaApi->deletecollection_namespaced_third_party_resource: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **namespace** | **str**| object name and auth scope, such as for teams and projects | 
+ **pretty** | **str**| If &#39;true&#39;, then the output is pretty printed. | [optional] 
+ **labelSelector** | **str**| A selector to restrict the list of returned objects by their labels. Defaults to everything. | [optional] 
+ **fieldSelector** | **str**| A selector to restrict the list of returned objects by their fields. Defaults to everything. | [optional] 
+ **watch** | **bool**| Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. | [optional] 
+ **resourceVersion** | **str**| When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. | [optional] 
+ **timeoutSeconds** | **int**| Timeout for the list/watch call. | [optional] 
+
+### Return type
+
+[**UnversionedStatus**](UnversionedStatus.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json, application/yaml, application/vnd.kubernetes.protobuf
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **deletecollection_third_party_resource**
 > UnversionedStatus deletecollection_third_party_resource(pretty=pretty, labelSelector=labelSelector, fieldSelector=fieldSelector, watch=watch, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds)
 
@@ -2285,6 +2394,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**V1beta1ReplicaSetList**](V1beta1ReplicaSetList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json, application/yaml, application/vnd.kubernetes.protobuf
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_namespaced_third_party_resources**
+> V1beta1ThirdPartyResource list_namespaced_third_party_resources(namespace, pretty=pretty, labelSelector=labelSelector, fieldSelector=fieldSelector, watch=watch, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds)
+
+list or watch objects of kind ThirdPartyResources
+
+### Example 
+```python
+import time
+import k8sv1beta1
+from k8sv1beta1.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = k8sv1beta1.ApisextensionsvbetaApi()
+namespace = 'namespace_example' # str | object name and auth scope, such as for teams and projects
+pretty = 'pretty_example' # str | If 'true', then the output is pretty printed. (optional)
+labelSelector = 'labelSelector_example' # str | A selector to restrict the list of returned objects by their labels. Defaults to everything. (optional)
+fieldSelector = 'fieldSelector_example' # str | A selector to restrict the list of returned objects by their fields. Defaults to everything. (optional)
+watch = true # bool | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
+resourceVersion = 'resourceVersion_example' # str | When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. (optional)
+timeoutSeconds = 56 # int | Timeout for the list/watch call. (optional)
+
+try: 
+    # list or watch objects of kind ThirdPartyResources
+    api_response = api_instance.list_namespaced_third_party_resources(namespace, pretty=pretty, labelSelector=labelSelector, fieldSelector=fieldSelector, watch=watch, resourceVersion=resourceVersion, timeoutSeconds=timeoutSeconds)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling ApisextensionsvbetaApi->list_namespaced_third_party_resources: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **namespace** | **str**| object name and auth scope, such as for teams and projects | 
+ **pretty** | **str**| If &#39;true&#39;, then the output is pretty printed. | [optional] 
+ **labelSelector** | **str**| A selector to restrict the list of returned objects by their labels. Defaults to everything. | [optional] 
+ **fieldSelector** | **str**| A selector to restrict the list of returned objects by their fields. Defaults to everything. | [optional] 
+ **watch** | **bool**| Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. | [optional] 
+ **resourceVersion** | **str**| When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. | [optional] 
+ **timeoutSeconds** | **int**| Timeout for the list/watch call. | [optional] 
+
+### Return type
+
+[**V1beta1ThirdPartyResource**](V1beta1ThirdPartyResource.md)
 
 ### Authorization
 
