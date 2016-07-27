@@ -50,7 +50,7 @@ class ApisextensionsvbetaApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def create_namespaced_daemon_set(self, Body, Namespace, **kwargs):
+    def create_namespaced_daemon_set(self, body, namespace, **kwargs):
         """
         create a DaemonSet
         
@@ -61,25 +61,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_daemon_set(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_daemon_set(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1DaemonSet Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1DaemonSet body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_namespaced_daemon_set_with_http_info(Body, Namespace, **kwargs)
+            return self.create_namespaced_daemon_set_with_http_info(body, namespace, **kwargs)
         else:
-            (data) = self.create_namespaced_daemon_set_with_http_info(Body, Namespace, **kwargs)
+            (data) = self.create_namespaced_daemon_set_with_http_info(body, namespace, **kwargs)
             return data
 
-    def create_namespaced_daemon_set_with_http_info(self, Body, Namespace, **kwargs):
+    def create_namespaced_daemon_set_with_http_info(self, body, namespace, **kwargs):
         """
         create a DaemonSet
         
@@ -90,19 +90,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_daemon_set_with_http_info(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_daemon_set_with_http_info(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1DaemonSet Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1DaemonSet body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Pretty']
+        all_params = ['body', 'namespace', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -115,21 +115,21 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `create_namespaced_daemon_set`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `create_namespaced_daemon_set`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_namespaced_daemon_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `create_namespaced_daemon_set`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/daemonsets'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -137,8 +137,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -165,7 +165,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def create_namespaced_deployment(self, Body, Namespace, **kwargs):
+    def create_namespaced_deployment(self, body, namespace, **kwargs):
         """
         create a Deployment
         
@@ -176,25 +176,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_deployment(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_deployment(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Deployment Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Deployment body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_namespaced_deployment_with_http_info(Body, Namespace, **kwargs)
+            return self.create_namespaced_deployment_with_http_info(body, namespace, **kwargs)
         else:
-            (data) = self.create_namespaced_deployment_with_http_info(Body, Namespace, **kwargs)
+            (data) = self.create_namespaced_deployment_with_http_info(body, namespace, **kwargs)
             return data
 
-    def create_namespaced_deployment_with_http_info(self, Body, Namespace, **kwargs):
+    def create_namespaced_deployment_with_http_info(self, body, namespace, **kwargs):
         """
         create a Deployment
         
@@ -205,19 +205,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_deployment_with_http_info(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_deployment_with_http_info(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Deployment Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Deployment body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Pretty']
+        all_params = ['body', 'namespace', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -230,21 +230,21 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `create_namespaced_deployment`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `create_namespaced_deployment`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_namespaced_deployment`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `create_namespaced_deployment`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -252,8 +252,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -280,7 +280,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def create_namespaced_deployment_rollback_rollback(self, Body, Namespace, Name, **kwargs):
+    def create_namespaced_deployment_rollback_rollback(self, body, namespace, name, **kwargs):
         """
         create rollback of a DeploymentRollback
         
@@ -291,26 +291,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_deployment_rollback_rollback(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.create_namespaced_deployment_rollback_rollback(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1DeploymentRollback Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DeploymentRollback (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1DeploymentRollback body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DeploymentRollback (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DeploymentRollback
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_namespaced_deployment_rollback_rollback_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.create_namespaced_deployment_rollback_rollback_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.create_namespaced_deployment_rollback_rollback_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.create_namespaced_deployment_rollback_rollback_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def create_namespaced_deployment_rollback_rollback_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def create_namespaced_deployment_rollback_rollback_with_http_info(self, body, namespace, name, **kwargs):
         """
         create rollback of a DeploymentRollback
         
@@ -321,20 +321,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_deployment_rollback_rollback_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.create_namespaced_deployment_rollback_rollback_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1DeploymentRollback Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DeploymentRollback (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1DeploymentRollback body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DeploymentRollback (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DeploymentRollback
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -347,26 +347,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `create_namespaced_deployment_rollback_rollback`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `create_namespaced_deployment_rollback_rollback`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `create_namespaced_deployment_rollback_rollback`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_namespaced_deployment_rollback_rollback`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `create_namespaced_deployment_rollback_rollback`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `create_namespaced_deployment_rollback_rollback`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name}/rollback'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -374,8 +374,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -402,7 +402,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def create_namespaced_horizontal_pod_autoscaler(self, Body, Namespace, **kwargs):
+    def create_namespaced_horizontal_pod_autoscaler(self, body, namespace, **kwargs):
         """
         create a HorizontalPodAutoscaler
         
@@ -413,25 +413,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_horizontal_pod_autoscaler(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_horizontal_pod_autoscaler(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1HorizontalPodAutoscaler Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1HorizontalPodAutoscaler body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_namespaced_horizontal_pod_autoscaler_with_http_info(Body, Namespace, **kwargs)
+            return self.create_namespaced_horizontal_pod_autoscaler_with_http_info(body, namespace, **kwargs)
         else:
-            (data) = self.create_namespaced_horizontal_pod_autoscaler_with_http_info(Body, Namespace, **kwargs)
+            (data) = self.create_namespaced_horizontal_pod_autoscaler_with_http_info(body, namespace, **kwargs)
             return data
 
-    def create_namespaced_horizontal_pod_autoscaler_with_http_info(self, Body, Namespace, **kwargs):
+    def create_namespaced_horizontal_pod_autoscaler_with_http_info(self, body, namespace, **kwargs):
         """
         create a HorizontalPodAutoscaler
         
@@ -442,19 +442,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_horizontal_pod_autoscaler_with_http_info(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_horizontal_pod_autoscaler_with_http_info(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1HorizontalPodAutoscaler Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1HorizontalPodAutoscaler body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Pretty']
+        all_params = ['body', 'namespace', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -467,21 +467,21 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `create_namespaced_horizontal_pod_autoscaler`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `create_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `create_namespaced_horizontal_pod_autoscaler`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/horizontalpodautoscalers'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -489,8 +489,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -517,7 +517,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def create_namespaced_ingress(self, Body, Namespace, **kwargs):
+    def create_namespaced_ingress(self, body, namespace, **kwargs):
         """
         create a Ingress
         
@@ -528,25 +528,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_ingress(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_ingress(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Ingress Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Ingress body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_namespaced_ingress_with_http_info(Body, Namespace, **kwargs)
+            return self.create_namespaced_ingress_with_http_info(body, namespace, **kwargs)
         else:
-            (data) = self.create_namespaced_ingress_with_http_info(Body, Namespace, **kwargs)
+            (data) = self.create_namespaced_ingress_with_http_info(body, namespace, **kwargs)
             return data
 
-    def create_namespaced_ingress_with_http_info(self, Body, Namespace, **kwargs):
+    def create_namespaced_ingress_with_http_info(self, body, namespace, **kwargs):
         """
         create a Ingress
         
@@ -557,19 +557,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_ingress_with_http_info(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_ingress_with_http_info(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Ingress Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Ingress body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Pretty']
+        all_params = ['body', 'namespace', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -582,21 +582,21 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `create_namespaced_ingress`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `create_namespaced_ingress`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_namespaced_ingress`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `create_namespaced_ingress`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/ingresses'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -604,8 +604,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -632,7 +632,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def create_namespaced_job(self, Body, Namespace, **kwargs):
+    def create_namespaced_job(self, body, namespace, **kwargs):
         """
         create a Job
         
@@ -643,25 +643,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_job(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_job(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Job Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Job body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_namespaced_job_with_http_info(Body, Namespace, **kwargs)
+            return self.create_namespaced_job_with_http_info(body, namespace, **kwargs)
         else:
-            (data) = self.create_namespaced_job_with_http_info(Body, Namespace, **kwargs)
+            (data) = self.create_namespaced_job_with_http_info(body, namespace, **kwargs)
             return data
 
-    def create_namespaced_job_with_http_info(self, Body, Namespace, **kwargs):
+    def create_namespaced_job_with_http_info(self, body, namespace, **kwargs):
         """
         create a Job
         
@@ -672,19 +672,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_job_with_http_info(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_job_with_http_info(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Job Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Job body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Pretty']
+        all_params = ['body', 'namespace', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -697,21 +697,21 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `create_namespaced_job`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `create_namespaced_job`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_namespaced_job`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `create_namespaced_job`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/jobs'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -719,8 +719,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -747,7 +747,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def create_namespaced_network_policy(self, Body, Namespace, **kwargs):
+    def create_namespaced_network_policy(self, body, namespace, **kwargs):
         """
         create a NetworkPolicy
         
@@ -758,25 +758,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_network_policy(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_network_policy(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1NetworkPolicy Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1NetworkPolicy body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1NetworkPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_namespaced_network_policy_with_http_info(Body, Namespace, **kwargs)
+            return self.create_namespaced_network_policy_with_http_info(body, namespace, **kwargs)
         else:
-            (data) = self.create_namespaced_network_policy_with_http_info(Body, Namespace, **kwargs)
+            (data) = self.create_namespaced_network_policy_with_http_info(body, namespace, **kwargs)
             return data
 
-    def create_namespaced_network_policy_with_http_info(self, Body, Namespace, **kwargs):
+    def create_namespaced_network_policy_with_http_info(self, body, namespace, **kwargs):
         """
         create a NetworkPolicy
         
@@ -787,19 +787,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_network_policy_with_http_info(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_network_policy_with_http_info(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1NetworkPolicy Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1NetworkPolicy body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1NetworkPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Pretty']
+        all_params = ['body', 'namespace', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -812,21 +812,21 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `create_namespaced_network_policy`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `create_namespaced_network_policy`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_namespaced_network_policy`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `create_namespaced_network_policy`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/networkpolicies'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -834,8 +834,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -862,7 +862,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def create_namespaced_replica_set(self, Body, Namespace, **kwargs):
+    def create_namespaced_replica_set(self, body, namespace, **kwargs):
         """
         create a ReplicaSet
         
@@ -873,25 +873,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_replica_set(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_replica_set(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1ReplicaSet Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1ReplicaSet body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_namespaced_replica_set_with_http_info(Body, Namespace, **kwargs)
+            return self.create_namespaced_replica_set_with_http_info(body, namespace, **kwargs)
         else:
-            (data) = self.create_namespaced_replica_set_with_http_info(Body, Namespace, **kwargs)
+            (data) = self.create_namespaced_replica_set_with_http_info(body, namespace, **kwargs)
             return data
 
-    def create_namespaced_replica_set_with_http_info(self, Body, Namespace, **kwargs):
+    def create_namespaced_replica_set_with_http_info(self, body, namespace, **kwargs):
         """
         create a ReplicaSet
         
@@ -902,19 +902,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_namespaced_replica_set_with_http_info(Body, Namespace, callback=callback_function)
+        >>> thread = api.create_namespaced_replica_set_with_http_info(body, namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1ReplicaSet Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1ReplicaSet body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Pretty']
+        all_params = ['body', 'namespace', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -927,21 +927,21 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `create_namespaced_replica_set`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `create_namespaced_replica_set`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_namespaced_replica_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `create_namespaced_replica_set`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicasets'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -949,8 +949,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -977,7 +977,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def create_third_party_resource(self, Body, **kwargs):
+    def create_third_party_resource(self, body, **kwargs):
         """
         create a ThirdPartyResource
         
@@ -988,24 +988,24 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_third_party_resource(Body, callback=callback_function)
+        >>> thread = api.create_third_party_resource(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1ThirdPartyResource Body:  (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1ThirdPartyResource body:  (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ThirdPartyResource
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_third_party_resource_with_http_info(Body, **kwargs)
+            return self.create_third_party_resource_with_http_info(body, **kwargs)
         else:
-            (data) = self.create_third_party_resource_with_http_info(Body, **kwargs)
+            (data) = self.create_third_party_resource_with_http_info(body, **kwargs)
             return data
 
-    def create_third_party_resource_with_http_info(self, Body, **kwargs):
+    def create_third_party_resource_with_http_info(self, body, **kwargs):
         """
         create a ThirdPartyResource
         
@@ -1016,18 +1016,18 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_third_party_resource_with_http_info(Body, callback=callback_function)
+        >>> thread = api.create_third_party_resource_with_http_info(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1ThirdPartyResource Body:  (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1ThirdPartyResource body:  (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ThirdPartyResource
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Pretty']
+        all_params = ['body', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -1040,16 +1040,16 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `create_third_party_resource`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_third_party_resource`")
 
         resource_path = '/apis/extensions/v1beta1/thirdpartyresources'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -1057,8 +1057,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -1085,7 +1085,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def delete_namespaced_daemon_set(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_daemon_set(self, body, namespace, name, **kwargs):
         """
         delete a DaemonSet
         
@@ -1096,26 +1096,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_daemon_set(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_daemon_set(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.delete_namespaced_daemon_set_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.delete_namespaced_daemon_set_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.delete_namespaced_daemon_set_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.delete_namespaced_daemon_set_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def delete_namespaced_daemon_set_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_daemon_set_with_http_info(self, body, namespace, name, **kwargs):
         """
         delete a DaemonSet
         
@@ -1126,20 +1126,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_daemon_set_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_daemon_set_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -1152,26 +1152,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `delete_namespaced_daemon_set`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `delete_namespaced_daemon_set`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `delete_namespaced_daemon_set`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `delete_namespaced_daemon_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `delete_namespaced_daemon_set`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `delete_namespaced_daemon_set`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/daemonsets/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -1179,8 +1179,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -1207,7 +1207,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def delete_namespaced_deployment(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_deployment(self, body, namespace, name, **kwargs):
         """
         delete a Deployment
         
@@ -1218,26 +1218,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_deployment(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_deployment(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.delete_namespaced_deployment_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.delete_namespaced_deployment_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.delete_namespaced_deployment_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.delete_namespaced_deployment_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def delete_namespaced_deployment_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_deployment_with_http_info(self, body, namespace, name, **kwargs):
         """
         delete a Deployment
         
@@ -1248,20 +1248,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_deployment_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_deployment_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -1274,26 +1274,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `delete_namespaced_deployment`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `delete_namespaced_deployment`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `delete_namespaced_deployment`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `delete_namespaced_deployment`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `delete_namespaced_deployment`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `delete_namespaced_deployment`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -1301,8 +1301,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -1329,7 +1329,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def delete_namespaced_horizontal_pod_autoscaler(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_horizontal_pod_autoscaler(self, body, namespace, name, **kwargs):
         """
         delete a HorizontalPodAutoscaler
         
@@ -1340,26 +1340,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_horizontal_pod_autoscaler(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_horizontal_pod_autoscaler(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.delete_namespaced_horizontal_pod_autoscaler_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.delete_namespaced_horizontal_pod_autoscaler_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.delete_namespaced_horizontal_pod_autoscaler_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.delete_namespaced_horizontal_pod_autoscaler_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def delete_namespaced_horizontal_pod_autoscaler_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_horizontal_pod_autoscaler_with_http_info(self, body, namespace, name, **kwargs):
         """
         delete a HorizontalPodAutoscaler
         
@@ -1370,20 +1370,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_horizontal_pod_autoscaler_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_horizontal_pod_autoscaler_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -1396,26 +1396,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `delete_namespaced_horizontal_pod_autoscaler`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `delete_namespaced_horizontal_pod_autoscaler`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `delete_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `delete_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `delete_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `delete_namespaced_horizontal_pod_autoscaler`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/horizontalpodautoscalers/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -1423,8 +1423,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -1451,7 +1451,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def delete_namespaced_ingress(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_ingress(self, body, namespace, name, **kwargs):
         """
         delete a Ingress
         
@@ -1462,26 +1462,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_ingress(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_ingress(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.delete_namespaced_ingress_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.delete_namespaced_ingress_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.delete_namespaced_ingress_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.delete_namespaced_ingress_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def delete_namespaced_ingress_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_ingress_with_http_info(self, body, namespace, name, **kwargs):
         """
         delete a Ingress
         
@@ -1492,20 +1492,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_ingress_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_ingress_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -1518,26 +1518,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `delete_namespaced_ingress`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `delete_namespaced_ingress`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `delete_namespaced_ingress`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `delete_namespaced_ingress`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `delete_namespaced_ingress`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `delete_namespaced_ingress`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -1545,8 +1545,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -1573,7 +1573,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def delete_namespaced_job(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_job(self, body, namespace, name, **kwargs):
         """
         delete a Job
         
@@ -1584,26 +1584,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_job(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_job(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.delete_namespaced_job_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.delete_namespaced_job_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.delete_namespaced_job_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.delete_namespaced_job_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def delete_namespaced_job_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_job_with_http_info(self, body, namespace, name, **kwargs):
         """
         delete a Job
         
@@ -1614,20 +1614,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_job_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_job_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -1640,26 +1640,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `delete_namespaced_job`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `delete_namespaced_job`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `delete_namespaced_job`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `delete_namespaced_job`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `delete_namespaced_job`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `delete_namespaced_job`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/jobs/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -1667,8 +1667,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -1695,7 +1695,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def delete_namespaced_network_policy(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_network_policy(self, body, namespace, name, **kwargs):
         """
         delete a NetworkPolicy
         
@@ -1706,26 +1706,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_network_policy(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_network_policy(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the NetworkPolicy (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the NetworkPolicy (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.delete_namespaced_network_policy_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.delete_namespaced_network_policy_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.delete_namespaced_network_policy_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.delete_namespaced_network_policy_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def delete_namespaced_network_policy_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_network_policy_with_http_info(self, body, namespace, name, **kwargs):
         """
         delete a NetworkPolicy
         
@@ -1736,20 +1736,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_network_policy_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_network_policy_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the NetworkPolicy (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the NetworkPolicy (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -1762,26 +1762,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `delete_namespaced_network_policy`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `delete_namespaced_network_policy`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `delete_namespaced_network_policy`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `delete_namespaced_network_policy`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `delete_namespaced_network_policy`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `delete_namespaced_network_policy`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/networkpolicies/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -1789,8 +1789,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -1817,7 +1817,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def delete_namespaced_replica_set(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_replica_set(self, body, namespace, name, **kwargs):
         """
         delete a ReplicaSet
         
@@ -1828,26 +1828,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_replica_set(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_replica_set(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.delete_namespaced_replica_set_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.delete_namespaced_replica_set_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.delete_namespaced_replica_set_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.delete_namespaced_replica_set_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def delete_namespaced_replica_set_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def delete_namespaced_replica_set_with_http_info(self, body, namespace, name, **kwargs):
         """
         delete a ReplicaSet
         
@@ -1858,20 +1858,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_namespaced_replica_set_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.delete_namespaced_replica_set_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -1884,26 +1884,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `delete_namespaced_replica_set`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `delete_namespaced_replica_set`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `delete_namespaced_replica_set`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `delete_namespaced_replica_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `delete_namespaced_replica_set`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `delete_namespaced_replica_set`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicasets/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -1911,8 +1911,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -1939,7 +1939,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def delete_third_party_resource(self, Body, Name, **kwargs):
+    def delete_third_party_resource(self, body, name, **kwargs):
         """
         delete a ThirdPartyResource
         
@@ -1950,25 +1950,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_third_party_resource(Body, Name, callback=callback_function)
+        >>> thread = api.delete_third_party_resource(body, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Name: name of the ThirdPartyResource (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str name: name of the ThirdPartyResource (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.delete_third_party_resource_with_http_info(Body, Name, **kwargs)
+            return self.delete_third_party_resource_with_http_info(body, name, **kwargs)
         else:
-            (data) = self.delete_third_party_resource_with_http_info(Body, Name, **kwargs)
+            (data) = self.delete_third_party_resource_with_http_info(body, name, **kwargs)
             return data
 
-    def delete_third_party_resource_with_http_info(self, Body, Name, **kwargs):
+    def delete_third_party_resource_with_http_info(self, body, name, **kwargs):
         """
         delete a ThirdPartyResource
         
@@ -1979,19 +1979,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_third_party_resource_with_http_info(Body, Name, callback=callback_function)
+        >>> thread = api.delete_third_party_resource_with_http_info(body, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1DeleteOptions Body:  (required)
-        :param str Name: name of the ThirdPartyResource (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1DeleteOptions body:  (required)
+        :param str name: name of the ThirdPartyResource (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Name', 'Pretty']
+        all_params = ['body', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -2004,21 +2004,21 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `delete_third_party_resource`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `delete_third_party_resource`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `delete_third_party_resource`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `delete_third_party_resource`")
 
         resource_path = '/apis/extensions/v1beta1/thirdpartyresources/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -2026,8 +2026,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -2054,7 +2054,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def deletecollection_namespaced_daemon_set(self, Namespace, **kwargs):
+    def deletecollection_namespaced_daemon_set(self, namespace, **kwargs):
         """
         delete collection of DaemonSet
         
@@ -2065,29 +2065,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_daemon_set(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_daemon_set(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.deletecollection_namespaced_daemon_set_with_http_info(Namespace, **kwargs)
+            return self.deletecollection_namespaced_daemon_set_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.deletecollection_namespaced_daemon_set_with_http_info(Namespace, **kwargs)
+            (data) = self.deletecollection_namespaced_daemon_set_with_http_info(namespace, **kwargs)
             return data
 
-    def deletecollection_namespaced_daemon_set_with_http_info(self, Namespace, **kwargs):
+    def deletecollection_namespaced_daemon_set_with_http_info(self, namespace, **kwargs):
         """
         delete collection of DaemonSet
         
@@ -2098,23 +2098,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_daemon_set_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_daemon_set_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -2127,28 +2127,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `deletecollection_namespaced_daemon_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `deletecollection_namespaced_daemon_set`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/daemonsets'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -2182,7 +2182,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def deletecollection_namespaced_deployment(self, Namespace, **kwargs):
+    def deletecollection_namespaced_deployment(self, namespace, **kwargs):
         """
         delete collection of Deployment
         
@@ -2193,29 +2193,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_deployment(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_deployment(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.deletecollection_namespaced_deployment_with_http_info(Namespace, **kwargs)
+            return self.deletecollection_namespaced_deployment_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.deletecollection_namespaced_deployment_with_http_info(Namespace, **kwargs)
+            (data) = self.deletecollection_namespaced_deployment_with_http_info(namespace, **kwargs)
             return data
 
-    def deletecollection_namespaced_deployment_with_http_info(self, Namespace, **kwargs):
+    def deletecollection_namespaced_deployment_with_http_info(self, namespace, **kwargs):
         """
         delete collection of Deployment
         
@@ -2226,23 +2226,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_deployment_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_deployment_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -2255,28 +2255,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `deletecollection_namespaced_deployment`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `deletecollection_namespaced_deployment`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -2310,7 +2310,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def deletecollection_namespaced_horizontal_pod_autoscaler(self, Namespace, **kwargs):
+    def deletecollection_namespaced_horizontal_pod_autoscaler(self, namespace, **kwargs):
         """
         delete collection of HorizontalPodAutoscaler
         
@@ -2321,29 +2321,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_horizontal_pod_autoscaler(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_horizontal_pod_autoscaler(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.deletecollection_namespaced_horizontal_pod_autoscaler_with_http_info(Namespace, **kwargs)
+            return self.deletecollection_namespaced_horizontal_pod_autoscaler_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.deletecollection_namespaced_horizontal_pod_autoscaler_with_http_info(Namespace, **kwargs)
+            (data) = self.deletecollection_namespaced_horizontal_pod_autoscaler_with_http_info(namespace, **kwargs)
             return data
 
-    def deletecollection_namespaced_horizontal_pod_autoscaler_with_http_info(self, Namespace, **kwargs):
+    def deletecollection_namespaced_horizontal_pod_autoscaler_with_http_info(self, namespace, **kwargs):
         """
         delete collection of HorizontalPodAutoscaler
         
@@ -2354,23 +2354,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_horizontal_pod_autoscaler_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_horizontal_pod_autoscaler_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -2383,28 +2383,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `deletecollection_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `deletecollection_namespaced_horizontal_pod_autoscaler`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/horizontalpodautoscalers'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -2438,7 +2438,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def deletecollection_namespaced_ingress(self, Namespace, **kwargs):
+    def deletecollection_namespaced_ingress(self, namespace, **kwargs):
         """
         delete collection of Ingress
         
@@ -2449,29 +2449,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_ingress(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_ingress(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.deletecollection_namespaced_ingress_with_http_info(Namespace, **kwargs)
+            return self.deletecollection_namespaced_ingress_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.deletecollection_namespaced_ingress_with_http_info(Namespace, **kwargs)
+            (data) = self.deletecollection_namespaced_ingress_with_http_info(namespace, **kwargs)
             return data
 
-    def deletecollection_namespaced_ingress_with_http_info(self, Namespace, **kwargs):
+    def deletecollection_namespaced_ingress_with_http_info(self, namespace, **kwargs):
         """
         delete collection of Ingress
         
@@ -2482,23 +2482,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_ingress_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_ingress_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -2511,28 +2511,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `deletecollection_namespaced_ingress`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `deletecollection_namespaced_ingress`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/ingresses'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -2566,7 +2566,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def deletecollection_namespaced_job(self, Namespace, **kwargs):
+    def deletecollection_namespaced_job(self, namespace, **kwargs):
         """
         delete collection of Job
         
@@ -2577,29 +2577,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_job(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_job(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.deletecollection_namespaced_job_with_http_info(Namespace, **kwargs)
+            return self.deletecollection_namespaced_job_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.deletecollection_namespaced_job_with_http_info(Namespace, **kwargs)
+            (data) = self.deletecollection_namespaced_job_with_http_info(namespace, **kwargs)
             return data
 
-    def deletecollection_namespaced_job_with_http_info(self, Namespace, **kwargs):
+    def deletecollection_namespaced_job_with_http_info(self, namespace, **kwargs):
         """
         delete collection of Job
         
@@ -2610,23 +2610,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_job_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_job_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -2639,28 +2639,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `deletecollection_namespaced_job`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `deletecollection_namespaced_job`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/jobs'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -2694,7 +2694,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def deletecollection_namespaced_network_policy(self, Namespace, **kwargs):
+    def deletecollection_namespaced_network_policy(self, namespace, **kwargs):
         """
         delete collection of NetworkPolicy
         
@@ -2705,29 +2705,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_network_policy(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_network_policy(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.deletecollection_namespaced_network_policy_with_http_info(Namespace, **kwargs)
+            return self.deletecollection_namespaced_network_policy_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.deletecollection_namespaced_network_policy_with_http_info(Namespace, **kwargs)
+            (data) = self.deletecollection_namespaced_network_policy_with_http_info(namespace, **kwargs)
             return data
 
-    def deletecollection_namespaced_network_policy_with_http_info(self, Namespace, **kwargs):
+    def deletecollection_namespaced_network_policy_with_http_info(self, namespace, **kwargs):
         """
         delete collection of NetworkPolicy
         
@@ -2738,23 +2738,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_network_policy_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_network_policy_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -2767,28 +2767,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `deletecollection_namespaced_network_policy`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `deletecollection_namespaced_network_policy`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/networkpolicies'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -2822,7 +2822,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def deletecollection_namespaced_replica_set(self, Namespace, **kwargs):
+    def deletecollection_namespaced_replica_set(self, namespace, **kwargs):
         """
         delete collection of ReplicaSet
         
@@ -2833,29 +2833,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_replica_set(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_replica_set(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.deletecollection_namespaced_replica_set_with_http_info(Namespace, **kwargs)
+            return self.deletecollection_namespaced_replica_set_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.deletecollection_namespaced_replica_set_with_http_info(Namespace, **kwargs)
+            (data) = self.deletecollection_namespaced_replica_set_with_http_info(namespace, **kwargs)
             return data
 
-    def deletecollection_namespaced_replica_set_with_http_info(self, Namespace, **kwargs):
+    def deletecollection_namespaced_replica_set_with_http_info(self, namespace, **kwargs):
         """
         delete collection of ReplicaSet
         
@@ -2866,23 +2866,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.deletecollection_namespaced_replica_set_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.deletecollection_namespaced_replica_set_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -2895,28 +2895,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `deletecollection_namespaced_replica_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `deletecollection_namespaced_replica_set`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicasets'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -2965,12 +2965,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2997,18 +2997,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: UnversionedStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -3026,18 +3026,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -3183,12 +3183,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1DaemonSetList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3215,18 +3215,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1DaemonSetList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -3244,18 +3244,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -3289,7 +3289,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def list_namespaced_daemon_set_0(self, Namespace, **kwargs):
+    def list_namespaced_daemon_set_0(self, namespace, **kwargs):
         """
         list or watch objects of kind DaemonSet
         
@@ -3300,29 +3300,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_daemon_set_0(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_daemon_set_0(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1DaemonSetList
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.list_namespaced_daemon_set_0_with_http_info(Namespace, **kwargs)
+            return self.list_namespaced_daemon_set_0_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.list_namespaced_daemon_set_0_with_http_info(Namespace, **kwargs)
+            (data) = self.list_namespaced_daemon_set_0_with_http_info(namespace, **kwargs)
             return data
 
-    def list_namespaced_daemon_set_0_with_http_info(self, Namespace, **kwargs):
+    def list_namespaced_daemon_set_0_with_http_info(self, namespace, **kwargs):
         """
         list or watch objects of kind DaemonSet
         
@@ -3333,23 +3333,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_daemon_set_0_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_daemon_set_0_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1DaemonSetList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -3362,28 +3362,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `list_namespaced_daemon_set_0`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_daemon_set_0`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/daemonsets'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -3432,12 +3432,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1DeploymentList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3464,18 +3464,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1DeploymentList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -3493,18 +3493,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -3538,7 +3538,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def list_namespaced_deployment_0(self, Namespace, **kwargs):
+    def list_namespaced_deployment_0(self, namespace, **kwargs):
         """
         list or watch objects of kind Deployment
         
@@ -3549,29 +3549,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_deployment_0(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_deployment_0(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1DeploymentList
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.list_namespaced_deployment_0_with_http_info(Namespace, **kwargs)
+            return self.list_namespaced_deployment_0_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.list_namespaced_deployment_0_with_http_info(Namespace, **kwargs)
+            (data) = self.list_namespaced_deployment_0_with_http_info(namespace, **kwargs)
             return data
 
-    def list_namespaced_deployment_0_with_http_info(self, Namespace, **kwargs):
+    def list_namespaced_deployment_0_with_http_info(self, namespace, **kwargs):
         """
         list or watch objects of kind Deployment
         
@@ -3582,23 +3582,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_deployment_0_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_deployment_0_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1DeploymentList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -3611,28 +3611,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `list_namespaced_deployment_0`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_deployment_0`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -3681,12 +3681,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1HorizontalPodAutoscalerList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3713,18 +3713,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1HorizontalPodAutoscalerList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -3742,18 +3742,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -3787,7 +3787,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def list_namespaced_horizontal_pod_autoscaler_0(self, Namespace, **kwargs):
+    def list_namespaced_horizontal_pod_autoscaler_0(self, namespace, **kwargs):
         """
         list or watch objects of kind HorizontalPodAutoscaler
         
@@ -3798,29 +3798,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_horizontal_pod_autoscaler_0(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_horizontal_pod_autoscaler_0(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1HorizontalPodAutoscalerList
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.list_namespaced_horizontal_pod_autoscaler_0_with_http_info(Namespace, **kwargs)
+            return self.list_namespaced_horizontal_pod_autoscaler_0_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.list_namespaced_horizontal_pod_autoscaler_0_with_http_info(Namespace, **kwargs)
+            (data) = self.list_namespaced_horizontal_pod_autoscaler_0_with_http_info(namespace, **kwargs)
             return data
 
-    def list_namespaced_horizontal_pod_autoscaler_0_with_http_info(self, Namespace, **kwargs):
+    def list_namespaced_horizontal_pod_autoscaler_0_with_http_info(self, namespace, **kwargs):
         """
         list or watch objects of kind HorizontalPodAutoscaler
         
@@ -3831,23 +3831,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_horizontal_pod_autoscaler_0_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_horizontal_pod_autoscaler_0_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1HorizontalPodAutoscalerList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -3860,28 +3860,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `list_namespaced_horizontal_pod_autoscaler_0`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_horizontal_pod_autoscaler_0`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/horizontalpodautoscalers'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -3930,12 +3930,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1IngressList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3962,18 +3962,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1IngressList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -3991,18 +3991,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -4036,7 +4036,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def list_namespaced_ingress_0(self, Namespace, **kwargs):
+    def list_namespaced_ingress_0(self, namespace, **kwargs):
         """
         list or watch objects of kind Ingress
         
@@ -4047,29 +4047,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_ingress_0(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_ingress_0(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1IngressList
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.list_namespaced_ingress_0_with_http_info(Namespace, **kwargs)
+            return self.list_namespaced_ingress_0_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.list_namespaced_ingress_0_with_http_info(Namespace, **kwargs)
+            (data) = self.list_namespaced_ingress_0_with_http_info(namespace, **kwargs)
             return data
 
-    def list_namespaced_ingress_0_with_http_info(self, Namespace, **kwargs):
+    def list_namespaced_ingress_0_with_http_info(self, namespace, **kwargs):
         """
         list or watch objects of kind Ingress
         
@@ -4080,23 +4080,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_ingress_0_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_ingress_0_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1IngressList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -4109,28 +4109,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `list_namespaced_ingress_0`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_ingress_0`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/ingresses'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -4179,12 +4179,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1JobList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4211,18 +4211,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1JobList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -4240,18 +4240,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -4285,7 +4285,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def list_namespaced_job_0(self, Namespace, **kwargs):
+    def list_namespaced_job_0(self, namespace, **kwargs):
         """
         list or watch objects of kind Job
         
@@ -4296,29 +4296,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_job_0(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_job_0(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1JobList
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.list_namespaced_job_0_with_http_info(Namespace, **kwargs)
+            return self.list_namespaced_job_0_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.list_namespaced_job_0_with_http_info(Namespace, **kwargs)
+            (data) = self.list_namespaced_job_0_with_http_info(namespace, **kwargs)
             return data
 
-    def list_namespaced_job_0_with_http_info(self, Namespace, **kwargs):
+    def list_namespaced_job_0_with_http_info(self, namespace, **kwargs):
         """
         list or watch objects of kind Job
         
@@ -4329,23 +4329,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_job_0_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_job_0_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1JobList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -4358,28 +4358,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `list_namespaced_job_0`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_job_0`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/jobs'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -4413,7 +4413,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def list_namespaced_network_policy(self, Namespace, **kwargs):
+    def list_namespaced_network_policy(self, namespace, **kwargs):
         """
         list or watch objects of kind NetworkPolicy
         
@@ -4424,29 +4424,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_network_policy(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_network_policy(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1NetworkPolicyList
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.list_namespaced_network_policy_with_http_info(Namespace, **kwargs)
+            return self.list_namespaced_network_policy_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.list_namespaced_network_policy_with_http_info(Namespace, **kwargs)
+            (data) = self.list_namespaced_network_policy_with_http_info(namespace, **kwargs)
             return data
 
-    def list_namespaced_network_policy_with_http_info(self, Namespace, **kwargs):
+    def list_namespaced_network_policy_with_http_info(self, namespace, **kwargs):
         """
         list or watch objects of kind NetworkPolicy
         
@@ -4457,23 +4457,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_network_policy_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_network_policy_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1NetworkPolicyList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -4486,28 +4486,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `list_namespaced_network_policy`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_network_policy`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/networkpolicies'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -4556,12 +4556,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1NetworkPolicyList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4588,18 +4588,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1NetworkPolicyList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -4617,18 +4617,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -4662,7 +4662,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def list_namespaced_replica_set(self, Namespace, **kwargs):
+    def list_namespaced_replica_set(self, namespace, **kwargs):
         """
         list or watch objects of kind ReplicaSet
         
@@ -4673,29 +4673,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_replica_set(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_replica_set(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1ReplicaSetList
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.list_namespaced_replica_set_with_http_info(Namespace, **kwargs)
+            return self.list_namespaced_replica_set_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.list_namespaced_replica_set_with_http_info(Namespace, **kwargs)
+            (data) = self.list_namespaced_replica_set_with_http_info(namespace, **kwargs)
             return data
 
-    def list_namespaced_replica_set_with_http_info(self, Namespace, **kwargs):
+    def list_namespaced_replica_set_with_http_info(self, namespace, **kwargs):
         """
         list or watch objects of kind ReplicaSet
         
@@ -4706,23 +4706,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_namespaced_replica_set_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.list_namespaced_replica_set_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1ReplicaSetList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -4735,28 +4735,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `list_namespaced_replica_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `list_namespaced_replica_set`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicasets'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -4805,12 +4805,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1ReplicaSetList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4837,18 +4837,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1ReplicaSetList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -4866,18 +4866,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -4926,12 +4926,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1ThirdPartyResourceList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4958,18 +4958,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: V1beta1ThirdPartyResourceList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -4987,18 +4987,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -5032,7 +5032,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_daemon_set(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_daemon_set(self, body, namespace, name, **kwargs):
         """
         partially update the specified DaemonSet
         
@@ -5043,26 +5043,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_daemon_set(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_daemon_set(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_daemon_set_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_daemon_set_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_daemon_set_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_daemon_set_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_daemon_set_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_daemon_set_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update the specified DaemonSet
         
@@ -5073,20 +5073,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_daemon_set_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_daemon_set_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -5099,26 +5099,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_daemon_set`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_daemon_set`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_daemon_set`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_daemon_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_daemon_set`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_daemon_set`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/daemonsets/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -5126,8 +5126,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -5154,7 +5154,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_daemon_set_status(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_daemon_set_status(self, body, namespace, name, **kwargs):
         """
         partially update status of the specified DaemonSet
         
@@ -5165,26 +5165,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_daemon_set_status(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_daemon_set_status(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_daemon_set_status_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_daemon_set_status_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_daemon_set_status_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_daemon_set_status_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_daemon_set_status_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_daemon_set_status_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update status of the specified DaemonSet
         
@@ -5195,20 +5195,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_daemon_set_status_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_daemon_set_status_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -5221,26 +5221,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_daemon_set_status`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_daemon_set_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_daemon_set_status`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_daemon_set_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_daemon_set_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_daemon_set_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/daemonsets/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -5248,8 +5248,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -5276,7 +5276,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_deployment(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_deployment(self, body, namespace, name, **kwargs):
         """
         partially update the specified Deployment
         
@@ -5287,26 +5287,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_deployment(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_deployment(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_deployment_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_deployment_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_deployment_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_deployment_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_deployment_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_deployment_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update the specified Deployment
         
@@ -5317,20 +5317,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_deployment_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_deployment_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -5343,26 +5343,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_deployment`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_deployment`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_deployment`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_deployment`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_deployment`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_deployment`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -5370,8 +5370,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -5398,7 +5398,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_deployment_status(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_deployment_status(self, body, namespace, name, **kwargs):
         """
         partially update status of the specified Deployment
         
@@ -5409,26 +5409,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_deployment_status(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_deployment_status(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_deployment_status_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_deployment_status_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_deployment_status_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_deployment_status_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_deployment_status_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_deployment_status_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update status of the specified Deployment
         
@@ -5439,20 +5439,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_deployment_status_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_deployment_status_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -5465,26 +5465,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_deployment_status`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_deployment_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_deployment_status`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_deployment_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_deployment_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_deployment_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -5492,8 +5492,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -5520,7 +5520,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_horizontal_pod_autoscaler(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_horizontal_pod_autoscaler(self, body, namespace, name, **kwargs):
         """
         partially update the specified HorizontalPodAutoscaler
         
@@ -5531,26 +5531,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_horizontal_pod_autoscaler(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_horizontal_pod_autoscaler(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_horizontal_pod_autoscaler_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_horizontal_pod_autoscaler_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_horizontal_pod_autoscaler_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_horizontal_pod_autoscaler_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_horizontal_pod_autoscaler_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_horizontal_pod_autoscaler_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update the specified HorizontalPodAutoscaler
         
@@ -5561,20 +5561,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_horizontal_pod_autoscaler_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_horizontal_pod_autoscaler_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -5587,26 +5587,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_horizontal_pod_autoscaler`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_horizontal_pod_autoscaler`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_horizontal_pod_autoscaler`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/horizontalpodautoscalers/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -5614,8 +5614,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -5642,7 +5642,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_horizontal_pod_autoscaler_status(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_horizontal_pod_autoscaler_status(self, body, namespace, name, **kwargs):
         """
         partially update status of the specified HorizontalPodAutoscaler
         
@@ -5653,26 +5653,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_horizontal_pod_autoscaler_status(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_horizontal_pod_autoscaler_status(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_horizontal_pod_autoscaler_status_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_horizontal_pod_autoscaler_status_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_horizontal_pod_autoscaler_status_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_horizontal_pod_autoscaler_status_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_horizontal_pod_autoscaler_status_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_horizontal_pod_autoscaler_status_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update status of the specified HorizontalPodAutoscaler
         
@@ -5683,20 +5683,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_horizontal_pod_autoscaler_status_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_horizontal_pod_autoscaler_status_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -5709,26 +5709,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_horizontal_pod_autoscaler_status`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_horizontal_pod_autoscaler_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_horizontal_pod_autoscaler_status`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_horizontal_pod_autoscaler_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_horizontal_pod_autoscaler_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_horizontal_pod_autoscaler_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/horizontalpodautoscalers/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -5736,8 +5736,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -5764,7 +5764,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_ingress(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_ingress(self, body, namespace, name, **kwargs):
         """
         partially update the specified Ingress
         
@@ -5775,26 +5775,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_ingress(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_ingress(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_ingress_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_ingress_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_ingress_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_ingress_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_ingress_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_ingress_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update the specified Ingress
         
@@ -5805,20 +5805,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_ingress_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_ingress_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -5831,26 +5831,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_ingress`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_ingress`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_ingress`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_ingress`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_ingress`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_ingress`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -5858,8 +5858,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -5886,7 +5886,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_ingress_status(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_ingress_status(self, body, namespace, name, **kwargs):
         """
         partially update status of the specified Ingress
         
@@ -5897,26 +5897,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_ingress_status(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_ingress_status(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_ingress_status_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_ingress_status_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_ingress_status_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_ingress_status_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_ingress_status_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_ingress_status_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update status of the specified Ingress
         
@@ -5927,20 +5927,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_ingress_status_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_ingress_status_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -5953,26 +5953,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_ingress_status`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_ingress_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_ingress_status`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_ingress_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_ingress_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_ingress_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -5980,8 +5980,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -6008,7 +6008,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_job(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_job(self, body, namespace, name, **kwargs):
         """
         partially update the specified Job
         
@@ -6019,26 +6019,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_job(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_job(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_job_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_job_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_job_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_job_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_job_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_job_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update the specified Job
         
@@ -6049,20 +6049,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_job_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_job_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -6075,26 +6075,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_job`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_job`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_job`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_job`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_job`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_job`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/jobs/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -6102,8 +6102,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -6130,7 +6130,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_job_status(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_job_status(self, body, namespace, name, **kwargs):
         """
         partially update status of the specified Job
         
@@ -6141,26 +6141,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_job_status(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_job_status(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_job_status_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_job_status_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_job_status_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_job_status_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_job_status_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_job_status_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update status of the specified Job
         
@@ -6171,20 +6171,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_job_status_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_job_status_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -6197,26 +6197,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_job_status`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_job_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_job_status`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_job_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_job_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_job_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/jobs/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -6224,8 +6224,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -6252,7 +6252,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_network_policy(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_network_policy(self, body, namespace, name, **kwargs):
         """
         partially update the specified NetworkPolicy
         
@@ -6263,26 +6263,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_network_policy(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_network_policy(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the NetworkPolicy (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the NetworkPolicy (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1NetworkPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_network_policy_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_network_policy_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_network_policy_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_network_policy_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_network_policy_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_network_policy_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update the specified NetworkPolicy
         
@@ -6293,20 +6293,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_network_policy_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_network_policy_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the NetworkPolicy (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the NetworkPolicy (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1NetworkPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -6319,26 +6319,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_network_policy`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_network_policy`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_network_policy`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_network_policy`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_network_policy`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_network_policy`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/networkpolicies/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -6346,8 +6346,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -6374,7 +6374,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_replica_set(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_replica_set(self, body, namespace, name, **kwargs):
         """
         partially update the specified ReplicaSet
         
@@ -6385,26 +6385,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_replica_set(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_replica_set(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_replica_set_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_replica_set_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_replica_set_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_replica_set_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_replica_set_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_replica_set_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update the specified ReplicaSet
         
@@ -6415,20 +6415,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_replica_set_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_replica_set_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -6441,26 +6441,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_replica_set`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_replica_set`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_replica_set`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_replica_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_replica_set`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_replica_set`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicasets/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -6468,8 +6468,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -6496,7 +6496,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_replica_set_status(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_replica_set_status(self, body, namespace, name, **kwargs):
         """
         partially update status of the specified ReplicaSet
         
@@ -6507,26 +6507,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_replica_set_status(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_replica_set_status(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_replica_set_status_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_replica_set_status_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_replica_set_status_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_replica_set_status_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_replica_set_status_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_replica_set_status_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update status of the specified ReplicaSet
         
@@ -6537,20 +6537,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_replica_set_status_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_replica_set_status_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -6563,26 +6563,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_replica_set_status`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_replica_set_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_replica_set_status`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_replica_set_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_replica_set_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_replica_set_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicasets/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -6590,8 +6590,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -6618,7 +6618,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_scale_scale(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_scale_scale(self, body, namespace, name, **kwargs):
         """
         partially update scale of the specified Scale
         
@@ -6629,26 +6629,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_scale_scale(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_scale_scale(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_scale_scale_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_scale_scale_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_scale_scale_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_scale_scale_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_scale_scale_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_scale_scale_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update scale of the specified Scale
         
@@ -6659,20 +6659,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_scale_scale_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_scale_scale_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -6685,26 +6685,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_scale_scale`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_scale_scale`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_scale_scale`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_scale_scale`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_scale_scale`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_scale_scale`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name}/scale'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -6712,8 +6712,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -6740,7 +6740,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_scale_scale_0(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_scale_scale_0(self, body, namespace, name, **kwargs):
         """
         partially update scale of the specified Scale
         
@@ -6751,26 +6751,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_scale_scale_0(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_scale_scale_0(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_scale_scale_0_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_scale_scale_0_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_scale_scale_0_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_scale_scale_0_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_scale_scale_0_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_scale_scale_0_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update scale of the specified Scale
         
@@ -6781,20 +6781,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_scale_scale_0_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_scale_scale_0_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -6807,26 +6807,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_scale_scale_0`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_scale_scale_0`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_scale_scale_0`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_scale_scale_0`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_scale_scale_0`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_scale_scale_0`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicasets/{name}/scale'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -6834,8 +6834,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -6862,7 +6862,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_namespaced_scale_scale_1(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_scale_scale_1(self, body, namespace, name, **kwargs):
         """
         partially update scale of the specified Scale
         
@@ -6873,26 +6873,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_scale_scale_1(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_scale_scale_1(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_namespaced_scale_scale_1_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.patch_namespaced_scale_scale_1_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.patch_namespaced_scale_scale_1_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.patch_namespaced_scale_scale_1_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def patch_namespaced_scale_scale_1_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def patch_namespaced_scale_scale_1_with_http_info(self, body, namespace, name, **kwargs):
         """
         partially update scale of the specified Scale
         
@@ -6903,20 +6903,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_namespaced_scale_scale_1_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.patch_namespaced_scale_scale_1_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -6929,26 +6929,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_namespaced_scale_scale_1`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `patch_namespaced_scale_scale_1`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_namespaced_scale_scale_1`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_namespaced_scale_scale_1`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `patch_namespaced_scale_scale_1`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_namespaced_scale_scale_1`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicationcontrollers/{name}/scale'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -6956,8 +6956,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -6984,7 +6984,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def patch_third_party_resource(self, Body, Name, **kwargs):
+    def patch_third_party_resource(self, body, name, **kwargs):
         """
         partially update the specified ThirdPartyResource
         
@@ -6995,25 +6995,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_third_party_resource(Body, Name, callback=callback_function)
+        >>> thread = api.patch_third_party_resource(body, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Name: name of the ThirdPartyResource (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str name: name of the ThirdPartyResource (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ThirdPartyResource
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.patch_third_party_resource_with_http_info(Body, Name, **kwargs)
+            return self.patch_third_party_resource_with_http_info(body, name, **kwargs)
         else:
-            (data) = self.patch_third_party_resource_with_http_info(Body, Name, **kwargs)
+            (data) = self.patch_third_party_resource_with_http_info(body, name, **kwargs)
             return data
 
-    def patch_third_party_resource_with_http_info(self, Body, Name, **kwargs):
+    def patch_third_party_resource_with_http_info(self, body, name, **kwargs):
         """
         partially update the specified ThirdPartyResource
         
@@ -7024,19 +7024,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_third_party_resource_with_http_info(Body, Name, callback=callback_function)
+        >>> thread = api.patch_third_party_resource_with_http_info(body, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UnversionedPatch Body:  (required)
-        :param str Name: name of the ThirdPartyResource (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param UnversionedPatch body:  (required)
+        :param str name: name of the ThirdPartyResource (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ThirdPartyResource
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Name', 'Pretty']
+        all_params = ['body', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -7049,21 +7049,21 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `patch_third_party_resource`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `patch_third_party_resource`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_third_party_resource`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `patch_third_party_resource`")
 
         resource_path = '/apis/extensions/v1beta1/thirdpartyresources/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -7071,8 +7071,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -7099,7 +7099,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_daemon_set(self, Namespace, Name, **kwargs):
+    def read_namespaced_daemon_set(self, namespace, name, **kwargs):
         """
         read the specified DaemonSet
         
@@ -7110,27 +7110,27 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_daemon_set(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_daemon_set(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_daemon_set_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_daemon_set_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_daemon_set_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_daemon_set_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_daemon_set_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_daemon_set_with_http_info(self, namespace, name, **kwargs):
         """
         read the specified DaemonSet
         
@@ -7141,21 +7141,21 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_daemon_set_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_daemon_set_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'Export', 'Exact']
+        all_params = ['namespace', 'name', 'pretty', 'export', 'exact']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -7168,27 +7168,27 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_daemon_set`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_daemon_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_daemon_set`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_daemon_set`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/daemonsets/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'Export' in params:
-            query_params['export'] = params['Export']
-        if 'Exact' in params:
-            query_params['exact'] = params['Exact']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'export' in params:
+            query_params['export'] = params['export']
+        if 'exact' in params:
+            query_params['exact'] = params['exact']
 
         header_params = {}
 
@@ -7222,7 +7222,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_daemon_set_status(self, Namespace, Name, **kwargs):
+    def read_namespaced_daemon_set_status(self, namespace, name, **kwargs):
         """
         read status of the specified DaemonSet
         
@@ -7233,25 +7233,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_daemon_set_status(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_daemon_set_status(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_daemon_set_status_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_daemon_set_status_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_daemon_set_status_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_daemon_set_status_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_daemon_set_status_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_daemon_set_status_with_http_info(self, namespace, name, **kwargs):
         """
         read status of the specified DaemonSet
         
@@ -7262,19 +7262,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_daemon_set_status_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_daemon_set_status_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty']
+        all_params = ['namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -7287,23 +7287,23 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_daemon_set_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_daemon_set_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_daemon_set_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_daemon_set_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/daemonsets/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -7337,7 +7337,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_deployment(self, Namespace, Name, **kwargs):
+    def read_namespaced_deployment(self, namespace, name, **kwargs):
         """
         read the specified Deployment
         
@@ -7348,27 +7348,27 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_deployment(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_deployment(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_deployment_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_deployment_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_deployment_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_deployment_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_deployment_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_deployment_with_http_info(self, namespace, name, **kwargs):
         """
         read the specified Deployment
         
@@ -7379,21 +7379,21 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_deployment_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_deployment_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'Export', 'Exact']
+        all_params = ['namespace', 'name', 'pretty', 'export', 'exact']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -7406,27 +7406,27 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_deployment`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_deployment`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_deployment`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_deployment`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'Export' in params:
-            query_params['export'] = params['Export']
-        if 'Exact' in params:
-            query_params['exact'] = params['Exact']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'export' in params:
+            query_params['export'] = params['export']
+        if 'exact' in params:
+            query_params['exact'] = params['exact']
 
         header_params = {}
 
@@ -7460,7 +7460,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_deployment_status(self, Namespace, Name, **kwargs):
+    def read_namespaced_deployment_status(self, namespace, name, **kwargs):
         """
         read status of the specified Deployment
         
@@ -7471,25 +7471,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_deployment_status(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_deployment_status(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_deployment_status_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_deployment_status_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_deployment_status_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_deployment_status_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_deployment_status_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_deployment_status_with_http_info(self, namespace, name, **kwargs):
         """
         read status of the specified Deployment
         
@@ -7500,19 +7500,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_deployment_status_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_deployment_status_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty']
+        all_params = ['namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -7525,23 +7525,23 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_deployment_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_deployment_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_deployment_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_deployment_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -7575,7 +7575,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_horizontal_pod_autoscaler(self, Namespace, Name, **kwargs):
+    def read_namespaced_horizontal_pod_autoscaler(self, namespace, name, **kwargs):
         """
         read the specified HorizontalPodAutoscaler
         
@@ -7586,27 +7586,27 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_horizontal_pod_autoscaler(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_horizontal_pod_autoscaler(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_horizontal_pod_autoscaler_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_horizontal_pod_autoscaler_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_horizontal_pod_autoscaler_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_horizontal_pod_autoscaler_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_horizontal_pod_autoscaler_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_horizontal_pod_autoscaler_with_http_info(self, namespace, name, **kwargs):
         """
         read the specified HorizontalPodAutoscaler
         
@@ -7617,21 +7617,21 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_horizontal_pod_autoscaler_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_horizontal_pod_autoscaler_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'Export', 'Exact']
+        all_params = ['namespace', 'name', 'pretty', 'export', 'exact']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -7644,27 +7644,27 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_horizontal_pod_autoscaler`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_horizontal_pod_autoscaler`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/horizontalpodautoscalers/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'Export' in params:
-            query_params['export'] = params['Export']
-        if 'Exact' in params:
-            query_params['exact'] = params['Exact']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'export' in params:
+            query_params['export'] = params['export']
+        if 'exact' in params:
+            query_params['exact'] = params['exact']
 
         header_params = {}
 
@@ -7698,7 +7698,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_horizontal_pod_autoscaler_status(self, Namespace, Name, **kwargs):
+    def read_namespaced_horizontal_pod_autoscaler_status(self, namespace, name, **kwargs):
         """
         read status of the specified HorizontalPodAutoscaler
         
@@ -7709,25 +7709,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_horizontal_pod_autoscaler_status(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_horizontal_pod_autoscaler_status(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_horizontal_pod_autoscaler_status_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_horizontal_pod_autoscaler_status_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_horizontal_pod_autoscaler_status_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_horizontal_pod_autoscaler_status_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_horizontal_pod_autoscaler_status_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_horizontal_pod_autoscaler_status_with_http_info(self, namespace, name, **kwargs):
         """
         read status of the specified HorizontalPodAutoscaler
         
@@ -7738,19 +7738,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_horizontal_pod_autoscaler_status_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_horizontal_pod_autoscaler_status_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty']
+        all_params = ['namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -7763,23 +7763,23 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_horizontal_pod_autoscaler_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_horizontal_pod_autoscaler_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_horizontal_pod_autoscaler_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_horizontal_pod_autoscaler_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/horizontalpodautoscalers/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -7813,7 +7813,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_ingress(self, Namespace, Name, **kwargs):
+    def read_namespaced_ingress(self, namespace, name, **kwargs):
         """
         read the specified Ingress
         
@@ -7824,27 +7824,27 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_ingress(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_ingress(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_ingress_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_ingress_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_ingress_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_ingress_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_ingress_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_ingress_with_http_info(self, namespace, name, **kwargs):
         """
         read the specified Ingress
         
@@ -7855,21 +7855,21 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_ingress_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_ingress_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'Export', 'Exact']
+        all_params = ['namespace', 'name', 'pretty', 'export', 'exact']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -7882,27 +7882,27 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_ingress`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_ingress`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_ingress`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_ingress`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'Export' in params:
-            query_params['export'] = params['Export']
-        if 'Exact' in params:
-            query_params['exact'] = params['Exact']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'export' in params:
+            query_params['export'] = params['export']
+        if 'exact' in params:
+            query_params['exact'] = params['exact']
 
         header_params = {}
 
@@ -7936,7 +7936,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_ingress_status(self, Namespace, Name, **kwargs):
+    def read_namespaced_ingress_status(self, namespace, name, **kwargs):
         """
         read status of the specified Ingress
         
@@ -7947,25 +7947,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_ingress_status(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_ingress_status(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_ingress_status_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_ingress_status_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_ingress_status_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_ingress_status_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_ingress_status_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_ingress_status_with_http_info(self, namespace, name, **kwargs):
         """
         read status of the specified Ingress
         
@@ -7976,19 +7976,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_ingress_status_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_ingress_status_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty']
+        all_params = ['namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -8001,23 +8001,23 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_ingress_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_ingress_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_ingress_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_ingress_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -8051,7 +8051,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_job(self, Namespace, Name, **kwargs):
+    def read_namespaced_job(self, namespace, name, **kwargs):
         """
         read the specified Job
         
@@ -8062,27 +8062,27 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_job(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_job(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_job_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_job_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_job_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_job_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_job_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_job_with_http_info(self, namespace, name, **kwargs):
         """
         read the specified Job
         
@@ -8093,21 +8093,21 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_job_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_job_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'Export', 'Exact']
+        all_params = ['namespace', 'name', 'pretty', 'export', 'exact']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -8120,27 +8120,27 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_job`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_job`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_job`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_job`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/jobs/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'Export' in params:
-            query_params['export'] = params['Export']
-        if 'Exact' in params:
-            query_params['exact'] = params['Exact']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'export' in params:
+            query_params['export'] = params['export']
+        if 'exact' in params:
+            query_params['exact'] = params['exact']
 
         header_params = {}
 
@@ -8174,7 +8174,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_job_status(self, Namespace, Name, **kwargs):
+    def read_namespaced_job_status(self, namespace, name, **kwargs):
         """
         read status of the specified Job
         
@@ -8185,25 +8185,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_job_status(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_job_status(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_job_status_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_job_status_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_job_status_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_job_status_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_job_status_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_job_status_with_http_info(self, namespace, name, **kwargs):
         """
         read status of the specified Job
         
@@ -8214,19 +8214,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_job_status_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_job_status_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty']
+        all_params = ['namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -8239,23 +8239,23 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_job_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_job_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_job_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_job_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/jobs/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -8289,7 +8289,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_network_policy(self, Namespace, Name, **kwargs):
+    def read_namespaced_network_policy(self, namespace, name, **kwargs):
         """
         read the specified NetworkPolicy
         
@@ -8300,27 +8300,27 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_network_policy(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_network_policy(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the NetworkPolicy (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the NetworkPolicy (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1NetworkPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_network_policy_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_network_policy_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_network_policy_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_network_policy_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_network_policy_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_network_policy_with_http_info(self, namespace, name, **kwargs):
         """
         read the specified NetworkPolicy
         
@@ -8331,21 +8331,21 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_network_policy_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_network_policy_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the NetworkPolicy (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the NetworkPolicy (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1NetworkPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'Export', 'Exact']
+        all_params = ['namespace', 'name', 'pretty', 'export', 'exact']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -8358,27 +8358,27 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_network_policy`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_network_policy`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_network_policy`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_network_policy`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/networkpolicies/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'Export' in params:
-            query_params['export'] = params['Export']
-        if 'Exact' in params:
-            query_params['exact'] = params['Exact']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'export' in params:
+            query_params['export'] = params['export']
+        if 'exact' in params:
+            query_params['exact'] = params['exact']
 
         header_params = {}
 
@@ -8412,7 +8412,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_replica_set(self, Namespace, Name, **kwargs):
+    def read_namespaced_replica_set(self, namespace, name, **kwargs):
         """
         read the specified ReplicaSet
         
@@ -8423,27 +8423,27 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_replica_set(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_replica_set(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_replica_set_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_replica_set_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_replica_set_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_replica_set_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_replica_set_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_replica_set_with_http_info(self, namespace, name, **kwargs):
         """
         read the specified ReplicaSet
         
@@ -8454,21 +8454,21 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_replica_set_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_replica_set_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'Export', 'Exact']
+        all_params = ['namespace', 'name', 'pretty', 'export', 'exact']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -8481,27 +8481,27 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_replica_set`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_replica_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_replica_set`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_replica_set`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicasets/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'Export' in params:
-            query_params['export'] = params['Export']
-        if 'Exact' in params:
-            query_params['exact'] = params['Exact']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'export' in params:
+            query_params['export'] = params['export']
+        if 'exact' in params:
+            query_params['exact'] = params['exact']
 
         header_params = {}
 
@@ -8535,7 +8535,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_replica_set_status(self, Namespace, Name, **kwargs):
+    def read_namespaced_replica_set_status(self, namespace, name, **kwargs):
         """
         read status of the specified ReplicaSet
         
@@ -8546,25 +8546,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_replica_set_status(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_replica_set_status(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_replica_set_status_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_replica_set_status_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_replica_set_status_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_replica_set_status_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_replica_set_status_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_replica_set_status_with_http_info(self, namespace, name, **kwargs):
         """
         read status of the specified ReplicaSet
         
@@ -8575,19 +8575,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_replica_set_status_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_replica_set_status_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty']
+        all_params = ['namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -8600,23 +8600,23 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_replica_set_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_replica_set_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_replica_set_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_replica_set_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicasets/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -8650,7 +8650,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_scale_scale(self, Namespace, Name, **kwargs):
+    def read_namespaced_scale_scale(self, namespace, name, **kwargs):
         """
         read scale of the specified Scale
         
@@ -8661,25 +8661,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_scale_scale(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_scale_scale(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_scale_scale_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_scale_scale_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_scale_scale_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_scale_scale_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_scale_scale_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_scale_scale_with_http_info(self, namespace, name, **kwargs):
         """
         read scale of the specified Scale
         
@@ -8690,19 +8690,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_scale_scale_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_scale_scale_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty']
+        all_params = ['namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -8715,23 +8715,23 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_scale_scale`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_scale_scale`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_scale_scale`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_scale_scale`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name}/scale'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -8765,7 +8765,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_scale_scale_0(self, Namespace, Name, **kwargs):
+    def read_namespaced_scale_scale_0(self, namespace, name, **kwargs):
         """
         read scale of the specified Scale
         
@@ -8776,25 +8776,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_scale_scale_0(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_scale_scale_0(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_scale_scale_0_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_scale_scale_0_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_scale_scale_0_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_scale_scale_0_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_scale_scale_0_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_scale_scale_0_with_http_info(self, namespace, name, **kwargs):
         """
         read scale of the specified Scale
         
@@ -8805,19 +8805,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_scale_scale_0_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_scale_scale_0_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty']
+        all_params = ['namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -8830,23 +8830,23 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_scale_scale_0`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_scale_scale_0`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_scale_scale_0`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_scale_scale_0`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicasets/{name}/scale'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -8880,7 +8880,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_namespaced_scale_scale_1(self, Namespace, Name, **kwargs):
+    def read_namespaced_scale_scale_1(self, namespace, name, **kwargs):
         """
         read scale of the specified Scale
         
@@ -8891,25 +8891,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_scale_scale_1(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_scale_scale_1(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_namespaced_scale_scale_1_with_http_info(Namespace, Name, **kwargs)
+            return self.read_namespaced_scale_scale_1_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.read_namespaced_scale_scale_1_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.read_namespaced_scale_scale_1_with_http_info(namespace, name, **kwargs)
             return data
 
-    def read_namespaced_scale_scale_1_with_http_info(self, Namespace, Name, **kwargs):
+    def read_namespaced_scale_scale_1_with_http_info(self, namespace, name, **kwargs):
         """
         read scale of the specified Scale
         
@@ -8920,19 +8920,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_namespaced_scale_scale_1_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.read_namespaced_scale_scale_1_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty']
+        all_params = ['namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -8945,23 +8945,23 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `read_namespaced_scale_scale_1`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_namespaced_scale_scale_1`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `read_namespaced_scale_scale_1`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_namespaced_scale_scale_1`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicationcontrollers/{name}/scale'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -8995,7 +8995,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def read_third_party_resource(self, Name, **kwargs):
+    def read_third_party_resource(self, name, **kwargs):
         """
         read the specified ThirdPartyResource
         
@@ -9006,26 +9006,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_third_party_resource(Name, callback=callback_function)
+        >>> thread = api.read_third_party_resource(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Name: name of the ThirdPartyResource (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str name: name of the ThirdPartyResource (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1ThirdPartyResource
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.read_third_party_resource_with_http_info(Name, **kwargs)
+            return self.read_third_party_resource_with_http_info(name, **kwargs)
         else:
-            (data) = self.read_third_party_resource_with_http_info(Name, **kwargs)
+            (data) = self.read_third_party_resource_with_http_info(name, **kwargs)
             return data
 
-    def read_third_party_resource_with_http_info(self, Name, **kwargs):
+    def read_third_party_resource_with_http_info(self, name, **kwargs):
         """
         read the specified ThirdPartyResource
         
@@ -9036,20 +9036,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.read_third_party_resource_with_http_info(Name, callback=callback_function)
+        >>> thread = api.read_third_party_resource_with_http_info(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Name: name of the ThirdPartyResource (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param bool Export: Should this value be exported.  Export strips fields that a user can not specify.
-        :param bool Exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
+        :param str name: name of the ThirdPartyResource (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'
         :return: V1beta1ThirdPartyResource
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Name', 'Pretty', 'Export', 'Exact']
+        all_params = ['name', 'pretty', 'export', 'exact']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -9062,22 +9062,22 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `read_third_party_resource`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `read_third_party_resource`")
 
         resource_path = '/apis/extensions/v1beta1/thirdpartyresources/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'Export' in params:
-            query_params['export'] = params['Export']
-        if 'Exact' in params:
-            query_params['exact'] = params['Exact']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'export' in params:
+            query_params['export'] = params['export']
+        if 'exact' in params:
+            query_params['exact'] = params['exact']
 
         header_params = {}
 
@@ -9111,7 +9111,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_daemon_set(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_daemon_set(self, body, namespace, name, **kwargs):
         """
         replace the specified DaemonSet
         
@@ -9122,26 +9122,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_daemon_set(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_daemon_set(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1DaemonSet Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1DaemonSet body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_daemon_set_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_daemon_set_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_daemon_set_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_daemon_set_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_daemon_set_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_daemon_set_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace the specified DaemonSet
         
@@ -9152,20 +9152,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_daemon_set_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_daemon_set_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1DaemonSet Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1DaemonSet body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -9178,26 +9178,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_daemon_set`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_daemon_set`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_daemon_set`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_daemon_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_daemon_set`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_daemon_set`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/daemonsets/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -9205,8 +9205,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9233,7 +9233,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_daemon_set_status(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_daemon_set_status(self, body, namespace, name, **kwargs):
         """
         replace status of the specified DaemonSet
         
@@ -9244,26 +9244,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_daemon_set_status(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_daemon_set_status(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1DaemonSet Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1DaemonSet body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_daemon_set_status_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_daemon_set_status_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_daemon_set_status_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_daemon_set_status_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_daemon_set_status_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_daemon_set_status_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace status of the specified DaemonSet
         
@@ -9274,20 +9274,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_daemon_set_status_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_daemon_set_status_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1DaemonSet Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1DaemonSet body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1DaemonSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -9300,26 +9300,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_daemon_set_status`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_daemon_set_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_daemon_set_status`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_daemon_set_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_daemon_set_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_daemon_set_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/daemonsets/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -9327,8 +9327,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9355,7 +9355,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_deployment(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_deployment(self, body, namespace, name, **kwargs):
         """
         replace the specified Deployment
         
@@ -9366,26 +9366,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_deployment(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_deployment(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Deployment Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Deployment body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_deployment_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_deployment_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_deployment_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_deployment_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_deployment_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_deployment_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace the specified Deployment
         
@@ -9396,20 +9396,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_deployment_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_deployment_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Deployment Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Deployment body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -9422,26 +9422,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_deployment`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_deployment`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_deployment`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_deployment`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_deployment`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_deployment`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -9449,8 +9449,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9477,7 +9477,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_deployment_status(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_deployment_status(self, body, namespace, name, **kwargs):
         """
         replace status of the specified Deployment
         
@@ -9488,26 +9488,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_deployment_status(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_deployment_status(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Deployment Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Deployment body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_deployment_status_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_deployment_status_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_deployment_status_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_deployment_status_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_deployment_status_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_deployment_status_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace status of the specified Deployment
         
@@ -9518,20 +9518,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_deployment_status_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_deployment_status_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Deployment Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Deployment body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -9544,26 +9544,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_deployment_status`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_deployment_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_deployment_status`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_deployment_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_deployment_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_deployment_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -9571,8 +9571,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9599,7 +9599,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_horizontal_pod_autoscaler(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_horizontal_pod_autoscaler(self, body, namespace, name, **kwargs):
         """
         replace the specified HorizontalPodAutoscaler
         
@@ -9610,26 +9610,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_horizontal_pod_autoscaler(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_horizontal_pod_autoscaler(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1HorizontalPodAutoscaler Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1HorizontalPodAutoscaler body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_horizontal_pod_autoscaler_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_horizontal_pod_autoscaler_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_horizontal_pod_autoscaler_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_horizontal_pod_autoscaler_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_horizontal_pod_autoscaler_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_horizontal_pod_autoscaler_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace the specified HorizontalPodAutoscaler
         
@@ -9640,20 +9640,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_horizontal_pod_autoscaler_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_horizontal_pod_autoscaler_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1HorizontalPodAutoscaler Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1HorizontalPodAutoscaler body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -9666,26 +9666,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_horizontal_pod_autoscaler`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_horizontal_pod_autoscaler`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_horizontal_pod_autoscaler`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/horizontalpodautoscalers/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -9693,8 +9693,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9721,7 +9721,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_horizontal_pod_autoscaler_status(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_horizontal_pod_autoscaler_status(self, body, namespace, name, **kwargs):
         """
         replace status of the specified HorizontalPodAutoscaler
         
@@ -9732,26 +9732,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_horizontal_pod_autoscaler_status(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_horizontal_pod_autoscaler_status(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1HorizontalPodAutoscaler Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1HorizontalPodAutoscaler body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_horizontal_pod_autoscaler_status_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_horizontal_pod_autoscaler_status_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_horizontal_pod_autoscaler_status_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_horizontal_pod_autoscaler_status_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_horizontal_pod_autoscaler_status_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_horizontal_pod_autoscaler_status_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace status of the specified HorizontalPodAutoscaler
         
@@ -9762,20 +9762,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_horizontal_pod_autoscaler_status_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_horizontal_pod_autoscaler_status_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1HorizontalPodAutoscaler Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1HorizontalPodAutoscaler body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1HorizontalPodAutoscaler
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -9788,26 +9788,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_horizontal_pod_autoscaler_status`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_horizontal_pod_autoscaler_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_horizontal_pod_autoscaler_status`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_horizontal_pod_autoscaler_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_horizontal_pod_autoscaler_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_horizontal_pod_autoscaler_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/horizontalpodautoscalers/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -9815,8 +9815,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9843,7 +9843,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_ingress(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_ingress(self, body, namespace, name, **kwargs):
         """
         replace the specified Ingress
         
@@ -9854,26 +9854,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_ingress(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_ingress(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Ingress Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Ingress body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_ingress_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_ingress_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_ingress_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_ingress_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_ingress_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_ingress_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace the specified Ingress
         
@@ -9884,20 +9884,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_ingress_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_ingress_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Ingress Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Ingress body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -9910,26 +9910,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_ingress`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_ingress`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_ingress`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_ingress`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_ingress`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_ingress`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -9937,8 +9937,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9965,7 +9965,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_ingress_status(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_ingress_status(self, body, namespace, name, **kwargs):
         """
         replace status of the specified Ingress
         
@@ -9976,26 +9976,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_ingress_status(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_ingress_status(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Ingress Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Ingress body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_ingress_status_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_ingress_status_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_ingress_status_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_ingress_status_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_ingress_status_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_ingress_status_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace status of the specified Ingress
         
@@ -10006,20 +10006,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_ingress_status_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_ingress_status_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Ingress Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Ingress body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Ingress
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -10032,26 +10032,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_ingress_status`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_ingress_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_ingress_status`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_ingress_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_ingress_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_ingress_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -10059,8 +10059,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -10087,7 +10087,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_job(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_job(self, body, namespace, name, **kwargs):
         """
         replace the specified Job
         
@@ -10098,26 +10098,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_job(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_job(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Job Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Job body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_job_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_job_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_job_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_job_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_job_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_job_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace the specified Job
         
@@ -10128,20 +10128,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_job_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_job_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Job Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Job body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -10154,26 +10154,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_job`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_job`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_job`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_job`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_job`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_job`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/jobs/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -10181,8 +10181,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -10209,7 +10209,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_job_status(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_job_status(self, body, namespace, name, **kwargs):
         """
         replace status of the specified Job
         
@@ -10220,26 +10220,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_job_status(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_job_status(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Job Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Job body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_job_status_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_job_status_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_job_status_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_job_status_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_job_status_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_job_status_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace status of the specified Job
         
@@ -10250,20 +10250,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_job_status_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_job_status_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Job Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Job body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Job
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -10276,26 +10276,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_job_status`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_job_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_job_status`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_job_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_job_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_job_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/jobs/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -10303,8 +10303,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -10331,7 +10331,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_network_policy(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_network_policy(self, body, namespace, name, **kwargs):
         """
         replace the specified NetworkPolicy
         
@@ -10342,26 +10342,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_network_policy(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_network_policy(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1NetworkPolicy Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the NetworkPolicy (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1NetworkPolicy body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the NetworkPolicy (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1NetworkPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_network_policy_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_network_policy_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_network_policy_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_network_policy_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_network_policy_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_network_policy_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace the specified NetworkPolicy
         
@@ -10372,20 +10372,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_network_policy_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_network_policy_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1NetworkPolicy Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the NetworkPolicy (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1NetworkPolicy body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the NetworkPolicy (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1NetworkPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -10398,26 +10398,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_network_policy`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_network_policy`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_network_policy`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_network_policy`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_network_policy`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_network_policy`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/networkpolicies/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -10425,8 +10425,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -10453,7 +10453,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_replica_set(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_replica_set(self, body, namespace, name, **kwargs):
         """
         replace the specified ReplicaSet
         
@@ -10464,26 +10464,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_replica_set(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_replica_set(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1ReplicaSet Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1ReplicaSet body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_replica_set_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_replica_set_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_replica_set_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_replica_set_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_replica_set_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_replica_set_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace the specified ReplicaSet
         
@@ -10494,20 +10494,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_replica_set_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_replica_set_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1ReplicaSet Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1ReplicaSet body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -10520,26 +10520,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_replica_set`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_replica_set`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_replica_set`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_replica_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_replica_set`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_replica_set`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicasets/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -10547,8 +10547,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -10575,7 +10575,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_replica_set_status(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_replica_set_status(self, body, namespace, name, **kwargs):
         """
         replace status of the specified ReplicaSet
         
@@ -10586,26 +10586,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_replica_set_status(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_replica_set_status(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1ReplicaSet Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1ReplicaSet body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_replica_set_status_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_replica_set_status_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_replica_set_status_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_replica_set_status_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_replica_set_status_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_replica_set_status_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace status of the specified ReplicaSet
         
@@ -10616,20 +10616,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_replica_set_status_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_replica_set_status_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1ReplicaSet Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1ReplicaSet body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ReplicaSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -10642,26 +10642,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_replica_set_status`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_replica_set_status`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_replica_set_status`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_replica_set_status`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_replica_set_status`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_replica_set_status`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicasets/{name}/status'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -10669,8 +10669,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -10697,7 +10697,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_scale_scale(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_scale_scale(self, body, namespace, name, **kwargs):
         """
         replace scale of the specified Scale
         
@@ -10708,26 +10708,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_scale_scale(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_scale_scale(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Scale Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Scale body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_scale_scale_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_scale_scale_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_scale_scale_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_scale_scale_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_scale_scale_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_scale_scale_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace scale of the specified Scale
         
@@ -10738,20 +10738,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_scale_scale_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_scale_scale_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Scale Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Scale body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -10764,26 +10764,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_scale_scale`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_scale_scale`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_scale_scale`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_scale_scale`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_scale_scale`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_scale_scale`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name}/scale'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -10791,8 +10791,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -10819,7 +10819,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_scale_scale_0(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_scale_scale_0(self, body, namespace, name, **kwargs):
         """
         replace scale of the specified Scale
         
@@ -10830,26 +10830,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_scale_scale_0(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_scale_scale_0(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Scale Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Scale body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_scale_scale_0_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_scale_scale_0_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_scale_scale_0_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_scale_scale_0_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_scale_scale_0_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_scale_scale_0_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace scale of the specified Scale
         
@@ -10860,20 +10860,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_scale_scale_0_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_scale_scale_0_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Scale Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Scale body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -10886,26 +10886,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_scale_scale_0`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_scale_scale_0`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_scale_scale_0`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_scale_scale_0`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_scale_scale_0`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_scale_scale_0`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicasets/{name}/scale'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -10913,8 +10913,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -10941,7 +10941,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_namespaced_scale_scale_1(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_scale_scale_1(self, body, namespace, name, **kwargs):
         """
         replace scale of the specified Scale
         
@@ -10952,26 +10952,26 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_scale_scale_1(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_scale_scale_1(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Scale Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Scale body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_namespaced_scale_scale_1_with_http_info(Body, Namespace, Name, **kwargs)
+            return self.replace_namespaced_scale_scale_1_with_http_info(body, namespace, name, **kwargs)
         else:
-            (data) = self.replace_namespaced_scale_scale_1_with_http_info(Body, Namespace, Name, **kwargs)
+            (data) = self.replace_namespaced_scale_scale_1_with_http_info(body, namespace, name, **kwargs)
             return data
 
-    def replace_namespaced_scale_scale_1_with_http_info(self, Body, Namespace, Name, **kwargs):
+    def replace_namespaced_scale_scale_1_with_http_info(self, body, namespace, name, **kwargs):
         """
         replace scale of the specified Scale
         
@@ -10982,20 +10982,20 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_namespaced_scale_scale_1_with_http_info(Body, Namespace, Name, callback=callback_function)
+        >>> thread = api.replace_namespaced_scale_scale_1_with_http_info(body, namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1Scale Body:  (required)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Scale (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1Scale body:  (required)
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Scale (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Scale
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Namespace', 'Name', 'Pretty']
+        all_params = ['body', 'namespace', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -11008,26 +11008,26 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_namespaced_scale_scale_1`")
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `replace_namespaced_scale_scale_1`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_namespaced_scale_scale_1`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_namespaced_scale_scale_1`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `replace_namespaced_scale_scale_1`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_namespaced_scale_scale_1`")
 
         resource_path = '/apis/extensions/v1beta1/namespaces/{namespace}/replicationcontrollers/{name}/scale'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -11035,8 +11035,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -11063,7 +11063,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def replace_third_party_resource(self, Body, Name, **kwargs):
+    def replace_third_party_resource(self, body, name, **kwargs):
         """
         replace the specified ThirdPartyResource
         
@@ -11074,25 +11074,25 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_third_party_resource(Body, Name, callback=callback_function)
+        >>> thread = api.replace_third_party_resource(body, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1ThirdPartyResource Body:  (required)
-        :param str Name: name of the ThirdPartyResource (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1ThirdPartyResource body:  (required)
+        :param str name: name of the ThirdPartyResource (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ThirdPartyResource
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.replace_third_party_resource_with_http_info(Body, Name, **kwargs)
+            return self.replace_third_party_resource_with_http_info(body, name, **kwargs)
         else:
-            (data) = self.replace_third_party_resource_with_http_info(Body, Name, **kwargs)
+            (data) = self.replace_third_party_resource_with_http_info(body, name, **kwargs)
             return data
 
-    def replace_third_party_resource_with_http_info(self, Body, Name, **kwargs):
+    def replace_third_party_resource_with_http_info(self, body, name, **kwargs):
         """
         replace the specified ThirdPartyResource
         
@@ -11103,19 +11103,19 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.replace_third_party_resource_with_http_info(Body, Name, callback=callback_function)
+        >>> thread = api.replace_third_party_resource_with_http_info(body, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param V1beta1ThirdPartyResource Body:  (required)
-        :param str Name: name of the ThirdPartyResource (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
+        :param V1beta1ThirdPartyResource body:  (required)
+        :param str name: name of the ThirdPartyResource (required)
+        :param str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1ThirdPartyResource
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Body', 'Name', 'Pretty']
+        all_params = ['body', 'name', 'pretty']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -11128,21 +11128,21 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Body' is set
-        if ('Body' not in params) or (params['Body'] is None):
-            raise ValueError("Missing the required parameter `Body` when calling `replace_third_party_resource`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `replace_third_party_resource`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `replace_third_party_resource`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `replace_third_party_resource`")
 
         resource_path = '/apis/extensions/v1beta1/thirdpartyresources/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
 
         header_params = {}
 
@@ -11150,8 +11150,8 @@ class ApisextensionsvbetaApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'Body' in params:
-            body_params = params['Body']
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -11178,7 +11178,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_daemon_set(self, Namespace, Name, **kwargs):
+    def watch_namespaced_daemon_set(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind DaemonSet
         
@@ -11189,30 +11189,30 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_daemon_set(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_daemon_set(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_daemon_set_with_http_info(Namespace, Name, **kwargs)
+            return self.watch_namespaced_daemon_set_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.watch_namespaced_daemon_set_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.watch_namespaced_daemon_set_with_http_info(namespace, name, **kwargs)
             return data
 
-    def watch_namespaced_daemon_set_with_http_info(self, Namespace, Name, **kwargs):
+    def watch_namespaced_daemon_set_with_http_info(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind DaemonSet
         
@@ -11223,24 +11223,24 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_daemon_set_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_daemon_set_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the DaemonSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the DaemonSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'name', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -11253,33 +11253,33 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_daemon_set`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `watch_namespaced_daemon_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_daemon_set`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `watch_namespaced_daemon_set`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/daemonsets/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -11328,12 +11328,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11360,18 +11360,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -11389,18 +11389,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -11434,7 +11434,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_daemon_set_list_0(self, Namespace, **kwargs):
+    def watch_namespaced_daemon_set_list_0(self, namespace, **kwargs):
         """
         watch individual changes to a list of DaemonSet
         
@@ -11445,29 +11445,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_daemon_set_list_0(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_daemon_set_list_0(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_daemon_set_list_0_with_http_info(Namespace, **kwargs)
+            return self.watch_namespaced_daemon_set_list_0_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.watch_namespaced_daemon_set_list_0_with_http_info(Namespace, **kwargs)
+            (data) = self.watch_namespaced_daemon_set_list_0_with_http_info(namespace, **kwargs)
             return data
 
-    def watch_namespaced_daemon_set_list_0_with_http_info(self, Namespace, **kwargs):
+    def watch_namespaced_daemon_set_list_0_with_http_info(self, namespace, **kwargs):
         """
         watch individual changes to a list of DaemonSet
         
@@ -11478,23 +11478,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_daemon_set_list_0_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_daemon_set_list_0_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -11507,28 +11507,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_daemon_set_list_0`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_daemon_set_list_0`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/daemonsets'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -11562,7 +11562,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_deployment(self, Namespace, Name, **kwargs):
+    def watch_namespaced_deployment(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind Deployment
         
@@ -11573,30 +11573,30 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_deployment(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_deployment(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_deployment_with_http_info(Namespace, Name, **kwargs)
+            return self.watch_namespaced_deployment_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.watch_namespaced_deployment_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.watch_namespaced_deployment_with_http_info(namespace, name, **kwargs)
             return data
 
-    def watch_namespaced_deployment_with_http_info(self, Namespace, Name, **kwargs):
+    def watch_namespaced_deployment_with_http_info(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind Deployment
         
@@ -11607,24 +11607,24 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_deployment_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_deployment_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Deployment (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Deployment (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'name', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -11637,33 +11637,33 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_deployment`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `watch_namespaced_deployment`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_deployment`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `watch_namespaced_deployment`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/deployments/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -11712,12 +11712,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11744,18 +11744,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -11773,18 +11773,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -11818,7 +11818,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_deployment_list_0(self, Namespace, **kwargs):
+    def watch_namespaced_deployment_list_0(self, namespace, **kwargs):
         """
         watch individual changes to a list of Deployment
         
@@ -11829,29 +11829,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_deployment_list_0(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_deployment_list_0(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_deployment_list_0_with_http_info(Namespace, **kwargs)
+            return self.watch_namespaced_deployment_list_0_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.watch_namespaced_deployment_list_0_with_http_info(Namespace, **kwargs)
+            (data) = self.watch_namespaced_deployment_list_0_with_http_info(namespace, **kwargs)
             return data
 
-    def watch_namespaced_deployment_list_0_with_http_info(self, Namespace, **kwargs):
+    def watch_namespaced_deployment_list_0_with_http_info(self, namespace, **kwargs):
         """
         watch individual changes to a list of Deployment
         
@@ -11862,23 +11862,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_deployment_list_0_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_deployment_list_0_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -11891,28 +11891,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_deployment_list_0`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_deployment_list_0`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/deployments'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -11946,7 +11946,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_horizontal_pod_autoscaler(self, Namespace, Name, **kwargs):
+    def watch_namespaced_horizontal_pod_autoscaler(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind HorizontalPodAutoscaler
         
@@ -11957,30 +11957,30 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_horizontal_pod_autoscaler(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_horizontal_pod_autoscaler(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_horizontal_pod_autoscaler_with_http_info(Namespace, Name, **kwargs)
+            return self.watch_namespaced_horizontal_pod_autoscaler_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.watch_namespaced_horizontal_pod_autoscaler_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.watch_namespaced_horizontal_pod_autoscaler_with_http_info(namespace, name, **kwargs)
             return data
 
-    def watch_namespaced_horizontal_pod_autoscaler_with_http_info(self, Namespace, Name, **kwargs):
+    def watch_namespaced_horizontal_pod_autoscaler_with_http_info(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind HorizontalPodAutoscaler
         
@@ -11991,24 +11991,24 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_horizontal_pod_autoscaler_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_horizontal_pod_autoscaler_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the HorizontalPodAutoscaler (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the HorizontalPodAutoscaler (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'name', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -12021,33 +12021,33 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_horizontal_pod_autoscaler`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `watch_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_horizontal_pod_autoscaler`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `watch_namespaced_horizontal_pod_autoscaler`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/horizontalpodautoscalers/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -12096,12 +12096,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12128,18 +12128,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -12157,18 +12157,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -12202,7 +12202,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_horizontal_pod_autoscaler_list_0(self, Namespace, **kwargs):
+    def watch_namespaced_horizontal_pod_autoscaler_list_0(self, namespace, **kwargs):
         """
         watch individual changes to a list of HorizontalPodAutoscaler
         
@@ -12213,29 +12213,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_horizontal_pod_autoscaler_list_0(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_horizontal_pod_autoscaler_list_0(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_horizontal_pod_autoscaler_list_0_with_http_info(Namespace, **kwargs)
+            return self.watch_namespaced_horizontal_pod_autoscaler_list_0_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.watch_namespaced_horizontal_pod_autoscaler_list_0_with_http_info(Namespace, **kwargs)
+            (data) = self.watch_namespaced_horizontal_pod_autoscaler_list_0_with_http_info(namespace, **kwargs)
             return data
 
-    def watch_namespaced_horizontal_pod_autoscaler_list_0_with_http_info(self, Namespace, **kwargs):
+    def watch_namespaced_horizontal_pod_autoscaler_list_0_with_http_info(self, namespace, **kwargs):
         """
         watch individual changes to a list of HorizontalPodAutoscaler
         
@@ -12246,23 +12246,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_horizontal_pod_autoscaler_list_0_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_horizontal_pod_autoscaler_list_0_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -12275,28 +12275,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_horizontal_pod_autoscaler_list_0`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_horizontal_pod_autoscaler_list_0`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/horizontalpodautoscalers'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -12330,7 +12330,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_ingress(self, Namespace, Name, **kwargs):
+    def watch_namespaced_ingress(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind Ingress
         
@@ -12341,30 +12341,30 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_ingress(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_ingress(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_ingress_with_http_info(Namespace, Name, **kwargs)
+            return self.watch_namespaced_ingress_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.watch_namespaced_ingress_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.watch_namespaced_ingress_with_http_info(namespace, name, **kwargs)
             return data
 
-    def watch_namespaced_ingress_with_http_info(self, Namespace, Name, **kwargs):
+    def watch_namespaced_ingress_with_http_info(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind Ingress
         
@@ -12375,24 +12375,24 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_ingress_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_ingress_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Ingress (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Ingress (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'name', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -12405,33 +12405,33 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_ingress`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `watch_namespaced_ingress`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_ingress`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `watch_namespaced_ingress`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/ingresses/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -12480,12 +12480,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12512,18 +12512,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -12541,18 +12541,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -12586,7 +12586,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_ingress_list_0(self, Namespace, **kwargs):
+    def watch_namespaced_ingress_list_0(self, namespace, **kwargs):
         """
         watch individual changes to a list of Ingress
         
@@ -12597,29 +12597,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_ingress_list_0(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_ingress_list_0(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_ingress_list_0_with_http_info(Namespace, **kwargs)
+            return self.watch_namespaced_ingress_list_0_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.watch_namespaced_ingress_list_0_with_http_info(Namespace, **kwargs)
+            (data) = self.watch_namespaced_ingress_list_0_with_http_info(namespace, **kwargs)
             return data
 
-    def watch_namespaced_ingress_list_0_with_http_info(self, Namespace, **kwargs):
+    def watch_namespaced_ingress_list_0_with_http_info(self, namespace, **kwargs):
         """
         watch individual changes to a list of Ingress
         
@@ -12630,23 +12630,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_ingress_list_0_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_ingress_list_0_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -12659,28 +12659,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_ingress_list_0`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_ingress_list_0`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/ingresses'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -12714,7 +12714,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_job(self, Namespace, Name, **kwargs):
+    def watch_namespaced_job(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind Job
         
@@ -12725,30 +12725,30 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_job(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_job(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_job_with_http_info(Namespace, Name, **kwargs)
+            return self.watch_namespaced_job_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.watch_namespaced_job_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.watch_namespaced_job_with_http_info(namespace, name, **kwargs)
             return data
 
-    def watch_namespaced_job_with_http_info(self, Namespace, Name, **kwargs):
+    def watch_namespaced_job_with_http_info(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind Job
         
@@ -12759,24 +12759,24 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_job_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_job_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the Job (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the Job (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'name', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -12789,33 +12789,33 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_job`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `watch_namespaced_job`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_job`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `watch_namespaced_job`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/jobs/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -12864,12 +12864,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12896,18 +12896,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -12925,18 +12925,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -12970,7 +12970,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_job_list_0(self, Namespace, **kwargs):
+    def watch_namespaced_job_list_0(self, namespace, **kwargs):
         """
         watch individual changes to a list of Job
         
@@ -12981,29 +12981,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_job_list_0(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_job_list_0(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_job_list_0_with_http_info(Namespace, **kwargs)
+            return self.watch_namespaced_job_list_0_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.watch_namespaced_job_list_0_with_http_info(Namespace, **kwargs)
+            (data) = self.watch_namespaced_job_list_0_with_http_info(namespace, **kwargs)
             return data
 
-    def watch_namespaced_job_list_0_with_http_info(self, Namespace, **kwargs):
+    def watch_namespaced_job_list_0_with_http_info(self, namespace, **kwargs):
         """
         watch individual changes to a list of Job
         
@@ -13014,23 +13014,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_job_list_0_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_job_list_0_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -13043,28 +13043,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_job_list_0`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_job_list_0`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/jobs'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -13098,7 +13098,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_network_policy(self, Namespace, Name, **kwargs):
+    def watch_namespaced_network_policy(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind NetworkPolicy
         
@@ -13109,30 +13109,30 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_network_policy(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_network_policy(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the NetworkPolicy (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the NetworkPolicy (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_network_policy_with_http_info(Namespace, Name, **kwargs)
+            return self.watch_namespaced_network_policy_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.watch_namespaced_network_policy_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.watch_namespaced_network_policy_with_http_info(namespace, name, **kwargs)
             return data
 
-    def watch_namespaced_network_policy_with_http_info(self, Namespace, Name, **kwargs):
+    def watch_namespaced_network_policy_with_http_info(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind NetworkPolicy
         
@@ -13143,24 +13143,24 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_network_policy_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_network_policy_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the NetworkPolicy (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the NetworkPolicy (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'name', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -13173,33 +13173,33 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_network_policy`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `watch_namespaced_network_policy`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_network_policy`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `watch_namespaced_network_policy`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/networkpolicies/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -13233,7 +13233,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_network_policy_list(self, Namespace, **kwargs):
+    def watch_namespaced_network_policy_list(self, namespace, **kwargs):
         """
         watch individual changes to a list of NetworkPolicy
         
@@ -13244,29 +13244,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_network_policy_list(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_network_policy_list(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_network_policy_list_with_http_info(Namespace, **kwargs)
+            return self.watch_namespaced_network_policy_list_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.watch_namespaced_network_policy_list_with_http_info(Namespace, **kwargs)
+            (data) = self.watch_namespaced_network_policy_list_with_http_info(namespace, **kwargs)
             return data
 
-    def watch_namespaced_network_policy_list_with_http_info(self, Namespace, **kwargs):
+    def watch_namespaced_network_policy_list_with_http_info(self, namespace, **kwargs):
         """
         watch individual changes to a list of NetworkPolicy
         
@@ -13277,23 +13277,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_network_policy_list_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_network_policy_list_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -13306,28 +13306,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_network_policy_list`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_network_policy_list`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/networkpolicies'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -13376,12 +13376,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13408,18 +13408,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -13437,18 +13437,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -13482,7 +13482,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_replica_set(self, Namespace, Name, **kwargs):
+    def watch_namespaced_replica_set(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind ReplicaSet
         
@@ -13493,30 +13493,30 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_replica_set(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_replica_set(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_replica_set_with_http_info(Namespace, Name, **kwargs)
+            return self.watch_namespaced_replica_set_with_http_info(namespace, name, **kwargs)
         else:
-            (data) = self.watch_namespaced_replica_set_with_http_info(Namespace, Name, **kwargs)
+            (data) = self.watch_namespaced_replica_set_with_http_info(namespace, name, **kwargs)
             return data
 
-    def watch_namespaced_replica_set_with_http_info(self, Namespace, Name, **kwargs):
+    def watch_namespaced_replica_set_with_http_info(self, namespace, name, **kwargs):
         """
         watch changes to an object of kind ReplicaSet
         
@@ -13527,24 +13527,24 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_replica_set_with_http_info(Namespace, Name, callback=callback_function)
+        >>> thread = api.watch_namespaced_replica_set_with_http_info(namespace, name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Name: name of the ReplicaSet (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str name: name of the ReplicaSet (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Name', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'name', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -13557,33 +13557,33 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_replica_set`")
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `watch_namespaced_replica_set`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_replica_set`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `watch_namespaced_replica_set`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/replicasets/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -13617,7 +13617,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_namespaced_replica_set_list(self, Namespace, **kwargs):
+    def watch_namespaced_replica_set_list(self, namespace, **kwargs):
         """
         watch individual changes to a list of ReplicaSet
         
@@ -13628,29 +13628,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_replica_set_list(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_replica_set_list(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_namespaced_replica_set_list_with_http_info(Namespace, **kwargs)
+            return self.watch_namespaced_replica_set_list_with_http_info(namespace, **kwargs)
         else:
-            (data) = self.watch_namespaced_replica_set_list_with_http_info(Namespace, **kwargs)
+            (data) = self.watch_namespaced_replica_set_list_with_http_info(namespace, **kwargs)
             return data
 
-    def watch_namespaced_replica_set_list_with_http_info(self, Namespace, **kwargs):
+    def watch_namespaced_replica_set_list_with_http_info(self, namespace, **kwargs):
         """
         watch individual changes to a list of ReplicaSet
         
@@ -13661,23 +13661,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_namespaced_replica_set_list_with_http_info(Namespace, callback=callback_function)
+        >>> thread = api.watch_namespaced_replica_set_list_with_http_info(namespace, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Namespace: object name and auth scope, such as for teams and projects (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str namespace: object name and auth scope, such as for teams and projects (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Namespace', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['namespace', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -13690,28 +13690,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Namespace' is set
-        if ('Namespace' not in params) or (params['Namespace'] is None):
-            raise ValueError("Missing the required parameter `Namespace` when calling `watch_namespaced_replica_set_list`")
+        # verify the required parameter 'namespace' is set
+        if ('namespace' not in params) or (params['namespace'] is None):
+            raise ValueError("Missing the required parameter `namespace` when calling `watch_namespaced_replica_set_list`")
 
         resource_path = '/apis/extensions/v1beta1/watch/namespaces/{namespace}/replicasets'.replace('{format}', 'json')
         path_params = {}
-        if 'Namespace' in params:
-            path_params['namespace'] = params['Namespace']
+        if 'namespace' in params:
+            path_params['namespace'] = params['namespace']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -13760,12 +13760,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13792,18 +13792,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -13821,18 +13821,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -13866,7 +13866,7 @@ class ApisextensionsvbetaApi(object):
                                             callback=params.get('callback'),
                                             _return_http_data_only=params.get('_return_http_data_only'))
 
-    def watch_third_party_resource(self, Name, **kwargs):
+    def watch_third_party_resource(self, name, **kwargs):
         """
         watch changes to an object of kind ThirdPartyResource
         
@@ -13877,29 +13877,29 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_third_party_resource(Name, callback=callback_function)
+        >>> thread = api.watch_third_party_resource(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Name: name of the ThirdPartyResource (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str name: name of the ThirdPartyResource (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.watch_third_party_resource_with_http_info(Name, **kwargs)
+            return self.watch_third_party_resource_with_http_info(name, **kwargs)
         else:
-            (data) = self.watch_third_party_resource_with_http_info(Name, **kwargs)
+            (data) = self.watch_third_party_resource_with_http_info(name, **kwargs)
             return data
 
-    def watch_third_party_resource_with_http_info(self, Name, **kwargs):
+    def watch_third_party_resource_with_http_info(self, name, **kwargs):
         """
         watch changes to an object of kind ThirdPartyResource
         
@@ -13910,23 +13910,23 @@ class ApisextensionsvbetaApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.watch_third_party_resource_with_http_info(Name, callback=callback_function)
+        >>> thread = api.watch_third_party_resource_with_http_info(name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Name: name of the ThirdPartyResource (required)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str name: name of the ThirdPartyResource (required)
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Name', 'Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['name', 'pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -13939,28 +13939,28 @@ class ApisextensionsvbetaApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'Name' is set
-        if ('Name' not in params) or (params['Name'] is None):
-            raise ValueError("Missing the required parameter `Name` when calling `watch_third_party_resource`")
+        # verify the required parameter 'name' is set
+        if ('name' not in params) or (params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `watch_third_party_resource`")
 
         resource_path = '/apis/extensions/v1beta1/watch/thirdpartyresources/{name}'.replace('{format}', 'json')
         path_params = {}
-        if 'Name' in params:
-            path_params['name'] = params['Name']
+        if 'name' in params:
+            path_params['name'] = params['name']
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
@@ -14009,12 +14009,12 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14041,18 +14041,18 @@ class ApisextensionsvbetaApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str Pretty: If 'true', then the output is pretty printed.
-        :param str LabelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str FieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool Watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-        :param str ResourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
-        :param int TimeoutSeconds: Timeout for the list/watch call.
+        :param str pretty: If 'true', then the output is pretty printed.
+        :param str labelSelector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param str fieldSelector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param str resourceVersion: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+        :param int timeoutSeconds: Timeout for the list/watch call.
         :return: VersionedEvent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['Pretty', 'LabelSelector', 'FieldSelector', 'Watch', 'ResourceVersion', 'TimeoutSeconds']
+        all_params = ['pretty', 'labelSelector', 'fieldSelector', 'watch', 'resourceVersion', 'timeoutSeconds']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
 
@@ -14070,18 +14070,18 @@ class ApisextensionsvbetaApi(object):
         path_params = {}
 
         query_params = {}
-        if 'Pretty' in params:
-            query_params['pretty'] = params['Pretty']
-        if 'LabelSelector' in params:
-            query_params['labelSelector'] = params['LabelSelector']
-        if 'FieldSelector' in params:
-            query_params['fieldSelector'] = params['FieldSelector']
-        if 'Watch' in params:
-            query_params['watch'] = params['Watch']
-        if 'ResourceVersion' in params:
-            query_params['resourceVersion'] = params['ResourceVersion']
-        if 'TimeoutSeconds' in params:
-            query_params['timeoutSeconds'] = params['TimeoutSeconds']
+        if 'pretty' in params:
+            query_params['pretty'] = params['pretty']
+        if 'labelSelector' in params:
+            query_params['labelSelector'] = params['labelSelector']
+        if 'fieldSelector' in params:
+            query_params['fieldSelector'] = params['fieldSelector']
+        if 'watch' in params:
+            query_params['watch'] = params['watch']
+        if 'resourceVersion' in params:
+            query_params['resourceVersion'] = params['resourceVersion']
+        if 'timeoutSeconds' in params:
+            query_params['timeoutSeconds'] = params['timeoutSeconds']
 
         header_params = {}
 
