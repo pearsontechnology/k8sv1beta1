@@ -25,7 +25,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "k8sv1beta1"
-VERSION = "0.0.3"
+VERSION = "0.0.4"
 
 # To install the library, run the following
 #
