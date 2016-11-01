@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **kind** | **str** | Kind of the referent; More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds | [optional] 
-**name** | **str** | Name of the referent; More info: http://releases.k8s.io/HEAD/docs/user-guide/identifiers.md#names | [optional] 
+**name** | **str** | Name of the referent; More info: http://kubernetes.io/docs/user-guide/identifiers#names | [optional] 
 **apiVersion** | **str** | API version of the referent | [optional] 
 **subresource** | **str** | Subresource name of the referent | [optional] 
 

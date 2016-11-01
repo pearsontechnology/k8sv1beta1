@@ -1,4 +1,4 @@
-# V1beta1LabelSelectorRequirement
+# UnversionedLabelSelectorRequirement
 
 ## Properties
 Name | Type | Description | Notes
